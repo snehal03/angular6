@@ -6,6 +6,7 @@ import { FormPageRoutingModule } from './form-page-rounting.module';
 
 /** User Defined imports */
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
+import { ReactiveComponent } from './reactive/reactive.component';
 
 
 @NgModule({
@@ -15,7 +16,7 @@ import { TemplateDrivenComponent } from './template-driven/template-driven.compo
     ReactiveFormsModule,
     FormPageRoutingModule
   ],
-  declarations: [TemplateDrivenComponent],
+  declarations: [TemplateDrivenComponent, ReactiveComponent],
   providers: []
 })
 
