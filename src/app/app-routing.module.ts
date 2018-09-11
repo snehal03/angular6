@@ -7,6 +7,7 @@ import { PartialLayoutComponent } from "./layout/partial-layout/partial-layout.c
 import { Full_ROUTES } from "./shared/routes/full-layout.routes";
 import { PARTIAL_ROUTES } from "./shared/routes/partial-layout.routes.";
 
+import { AuthGuard } from './shared/auth/auth-guard.service';
 // import { ErrorComponent } from './error/error.component';
 
 const appRoutes: Routes = [
@@ -25,8 +26,8 @@ const appRoutes: Routes = [
     data: {
       title: "full Views"
     },
-    children: Full_ROUTES
-    // canActivate: [AuthGuard]
+    children: Full_ROUTES,
+    canActivate: [AuthGuard]
   },
   {
     path: "",
@@ -34,7 +35,7 @@ const appRoutes: Routes = [
     data: {
       title: "partial Views"
     },
-    children: PARTIAL_ROUTES
+    children: PARTIAL_ROUTES,
     // canActivate: [AuthGuard]
   }
   //  {

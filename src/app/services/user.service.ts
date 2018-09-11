@@ -30,7 +30,7 @@ export class UserService {
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
-      console.log("error",error);
+      console.log("Service error:",error);
      // you can show error message here
      // if u want to show it in component no need to write catchError
       return of(result as T);

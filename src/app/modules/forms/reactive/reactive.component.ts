@@ -37,7 +37,7 @@ export class ReactiveComponent implements OnInit {
 
   onSubmit() {
     // TODO: Use EventEmitter with form value
-    console.warn(this.profileForm.value);
+    console.log(this.profileForm.value);
   }
 
   resetForm(){
