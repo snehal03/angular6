@@ -1,25 +1,29 @@
 <div class="container">
   <div>
     <h1>Login</h1>
-    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+    <form (ngSubmit)="loginForm.form.valid && onSubmit()" #loginForm="ngForm" novalidate>
 
       <div class="form-group">
         <label for="alterEgo">Email</label>
-        <input type="email" class="form-control" id="alterEgo" required [(ngModel)]="loginModel.email" name="email" #email="ngModel">
-        <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
-          Email is required
+        <input type="email" class="form-control" id="alterEgo" required [(ngModel)]="loginModel.email" name="email" #email="ngModel"
+        [ngClass]="{ 'is-invalid': email.invalid && (email.dirty || email.touched) }" required email>
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-feedback">
+          <div *ngIf="email.errors.required">Email is required</div>
+          <div *ngIf="email.errors.email">Email must be a valid email address</div>
         </div>
-      </div>
 
-      <div class="form-group">
-        <label for="name">Password</label>
-        <input type="text" class="form-control" id="age" required [(ngModel)]="loginModel.password" name="password" #password="ngModel">
-        <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
-          Password is required
+     </div>
+     <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" [(ngModel)]="loginModel.password" #password="ngModel"
+        pattern = "(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s)(?=.*[*@_$#!&]).{8,12}$" [ngClass]="{ 'is-invalid': password.invalid && (password.dirty || password.touched) }" required minlength="8" />
+        <div *ngIf="password.invalid && (password.dirty || password.touched)" class="invalid-feedback">
+            <div *ngIf="password.errors.required">Password is required</div>
+            <div *ngIf="password.errors.minlength">Password must be at least 8 characters</div>
+            <div *ngIf="password.errors?.pattern">Password should contain atleast 1 Capital letter, 1 Number and 1 Special character</div>
         </div>
-      </div>
-      <button type="submit" class="btn btn-success" [disabled]="!loginForm.form.valid">Login</button>
+     </div>
+        <button type="submit" class="btn btn-success" [disabled]="!loginForm.form.valid">Login</button>
     </form>
+    </div>
   </div>
-</div>
-

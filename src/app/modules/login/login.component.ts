@@ -7,7 +7,7 @@ import { UserModel } from '../../models/userModel';
 })
 export class LoginComponent implements OnInit {
 
-  public loginModel;
+  public loginModel: any = {};
   constructor() { }
 
   ngOnInit() {
