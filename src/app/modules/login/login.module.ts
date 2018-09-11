@@ -20,4 +20,4 @@ import { LoginComponent  } from './login.component';
   providers: []
 })
 
-export class FormPageModule { }
+export class LoginModule { }
