@@ -1,53 +1,61 @@
 <div class="container">
-  <div>
-    <h1>User Form</h1>
-    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" class="form-control" id="name" required [(ngModel)]="userModel.name"
-        name="name" #name="ngModel"   [ngClass]="{ 'is-invalid': name.invalid && (name.dirty || name.touched) }">
+  <div class="row">
+    <div class="col-md-6 offset-md-3" style="margin-top: 50px">
+      <div>
+        <h3>User Details</h3>
+        <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" required [(ngModel)]="userModel.name" name="name" #name="ngModel" [ngClass]="{ 'is-invalid': name.invalid && (name.dirty || name.touched) }">
 
-        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
-          <div *ngIf="name?.errors?.required">{{msgs.required}}</div>
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="invalid-feedback">
+              <div *ngIf="name?.errors?.required">{{msgs.required}}</div>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label for="alterEgo">Email</label>
+            <input type="email" email class="form-control" id="alterEgo" required [(ngModel)]="userModel.email" name="email" #email="ngModel"
+              [ngClass]="{ 'is-invalid': email.invalid && (email.dirty || email.touched) }">
+
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-feedback">
+              <div *ngIf="email?.errors?.required">{{msgs.required}}</div>
+              <div *ngIf="email?.errors?.email">{{msgs.invalidEmail}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Age</label>
+            <input type="number" class="form-control" id="age" required [(ngModel)]="userModel.age" name="age" #age="ngModel" [ngClass]="{ 'is-invalid': age.invalid && (age.dirty || age.touched) }">
+            <div *ngIf="age.invalid && (age.dirty || age.touched)" class="invalid-feedback">
+              <div *ngIf="age?.errors?.required">{{msgs.required}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Phone</label>
+            <input type="text" class="form-control" id="phone" required [(ngModel)]="userModel.phone" name="phone" #phone="ngModel" minlength="8"
+              maxlength="15" [ngClass]="{ 'is-invalid': phone.invalid && (phone.dirty || phone.touched) }">
+            <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="invalid-feedback">
+              <div *ngIf="phone?.errors?.required">{{msgs.required}}</div>
+              <div *ngIf="phone?.errors?.minlength">{{ msgs.minlengthError}}</div>
+            </div>
+          </div>
+          <div class="form-group">
+           <div class="row">
+              <div class="col-md-2">
+                   <button type="submit" class="btn btn-success" [disabled]="!userForm.form.valid">Submit</button>
+              </div>
+
+              <div class="col-md-2">
+                   <button type="button" class="btn btn-default" (click)="userForm.reset()">Reset</button>
+              </div>
+          </div>
         </div>
-
+        </form>
       </div>
-
-      <div class="form-group">
-        <label for="alterEgo">Email</label>
-        <input type="email" email class="form-control" id="alterEgo" required  [(ngModel)]="userModel.email"
-         name="email" #email="ngModel" [ngClass]="{ 'is-invalid': email.invalid && (email.dirty || email.touched) }">
-
-         <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-feedback">
-          <div *ngIf="email?.errors?.required">{{msgs.required}}</div>
-          <div *ngIf="email?.errors?.email">{{msgs.invalidEmail}}</div>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="name">Age</label>
-        <input type="number" class="form-control" id="age" required [(ngModel)]="userModel.age" name="age" #age="ngModel"
-        [ngClass]="{ 'is-invalid': age.invalid && (age.dirty || age.touched) }">
-        <div *ngIf="age.invalid && (age.dirty || age.touched)" class="invalid-feedback">
-          <div *ngIf="age?.errors?.required">{{msgs.required}}</div>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="name">Phone</label>
-        <input type="text" class="form-control" id="phone" required [(ngModel)]="userModel.phone"
-        name="phone" #phone="ngModel" minlength="8" maxlength="15"
-        [ngClass]="{ 'is-invalid': phone.invalid && (phone.dirty || phone.touched) }">
-        <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="invalid-feedback">
-          <div *ngIf="phone?.errors?.required">{{msgs.required}}</div>
-          <div *ngIf="phone?.errors?.minlength">{{ msgs.minlengthError}}</div>
-        </div>
-      </div>
-
-      <button type="submit" class="btn btn-success" [disabled]="!userForm.form.valid">Submit</button>
-      <button type="button" class="btn btn-default" (click)="userForm.reset()">Reset</button>
-    </form>
+    </div>
   </div>
-
 
 </div>
