@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserModel } from '../../models/userModel';
+import { messages } from '../../globals/validation.msgs';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,6 +8,7 @@ import { UserModel } from '../../models/userModel';
 })
 export class LoginComponent implements OnInit {
 
+  readonly msgs = messages;
   public loginModel: any = {};
   constructor() { }
 
