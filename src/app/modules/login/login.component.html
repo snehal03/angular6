@@ -1,0 +1,25 @@
+<div class="container">
+  <div>
+    <h1>Login</h1>
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+
+      <div class="form-group">
+        <label for="alterEgo">Email</label>
+        <input type="email" class="form-control" id="alterEgo" required [(ngModel)]="loginModel.email" name="email" #email="ngModel">
+        <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+          Email is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="name">Password</label>
+        <input type="text" class="form-control" id="age" required [(ngModel)]="loginModel.password" name="password" #password="ngModel">
+        <div [hidden]="password.valid || password.pristine" class="alert alert-danger">
+          Password is required
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success" [disabled]="!loginForm.form.valid">Login</button>
+    </form>
+  </div>
+</div>
+

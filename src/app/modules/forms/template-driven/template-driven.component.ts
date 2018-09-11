@@ -15,7 +15,7 @@ export class TemplateDrivenComponent implements OnInit {
   }
 
 
-  onSubmit(){
-    console.log("userModel",this.userModel)
+  onSubmit() {
+    console.log('userModel', this.userModel);
   }
 }
