@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PartialLayoutComponent } from './layout/partial-layout/partial-layout.component';
 import { AuthGuard } from './shared/auth/auth-guard.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FileDownloadUtility } from './globals/file-download';
 
 @NgModule({
   declarations: [
@@ -17,9 +19,10 @@ import { AuthGuard } from './shared/auth/auth-guard.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    HttpClientModule
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, FileDownloadUtility],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

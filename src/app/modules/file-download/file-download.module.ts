@@ -1,7 +1,7 @@
 /** Bult in imports */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 
 /** User Defined imports */
 import { FileDownloadComponent  } from './file-download.component';
@@ -11,10 +11,10 @@ import {FileDownloadRoutingModule} from './file-download-routing.module';
   imports: [
     CommonModule,
     FormsModule,
-    FileDownloadRoutingModule
+    FileDownloadRoutingModule,ReactiveFormsModule
   ],
   declarations: [FileDownloadComponent],
-  providers: []
+  // providers: []
 })
 
 export class FileDownloadModule { }
