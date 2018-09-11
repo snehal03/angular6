@@ -12,6 +12,7 @@ export const messages = {
   country: 'Invalid country',
   zip: 'Invalid zipcode',
   minlengthError: 'Minimum length error',
-  passsVald:'Password must be at least 8 characters',
-  passStandrd: 'Password should contain atleast 1 Capital letter, 1 Number and 1 Special character'
+  passsVald: 'Password must be at least 8 characters',
+  passStandrd: 'Password should contain at least 1 Capital letter, 1 Number and 1 Special character',
+  zipCode: 'Invalid Zip Code : must contain minimum 5  and maximum 8 digits'
 };

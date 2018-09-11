@@ -1,42 +1,103 @@
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3" style="margin-top: 50px">
+      <div>
+        <h3>User Details</h3>
+        <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
 
-  <label>
-    First Name:
-    <input type="text" formControlName="firstName" required>
-  </label>
+          <!-- <div class="form-group"> -->
+          <!-- <label> First Name:</label>
+          <input type="text" formControlName="firstName" class="form-control"  [ngClass]="{ 'is-invalid': profileForm.firstName.errors && (firstName.dirty || firstName.touched)}"  required>
+          <div *ngIf="profileForm.firstName.errors && (firstName.dirty || firstName.touched) " class="invalid-feedback">
+              <div *ngIf="profileForm.firstName.errors.required">First Name is required</div>
+          </div>
+      </div>
 
-  <label>
-    Last Name:
-    <input type="text" formControlName="lastName" required>
-  </label>
+      <div class="form-group">
+        <label>Last Name:</label>
+          <input type="text" formControlName="lastName" class="form-control" required>
+      </div> -->
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': profileForm.controls['firstName']?.touched && f.firstName.errors }"
+            />
+            <div *ngIf="profileForm.controls['firstName']?.touched && f.firstName.errors" class="invalid-feedback">
+              <div *ngIf="f.firstName.errors.required">{{msgs.required}}</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': profileForm.controls['lastName']?.touched && f.lastName.errors }"
+            />
+            <div *ngIf="profileForm.controls['lastName']?.touched && f.lastName.errors" class="invalid-feedback">
+              <div *ngIf="f.lastName.errors.required">{{msgs.required}}</div>
+            </div>
+          </div>
 
-  <div formGroupName="address">
-    <h3>Address</h3>
 
-    <label>
-      Street:
-      <input type="text" formControlName="street" required>
-    </label>
+          <!-- <div formGroupName="address"> -->
+          <h5>Address</h5>
 
-    <label>
-      City:
-      <input type="text" formControlName="city" required>
-    </label>
+          <div class="form-group">
+            <label>Street:</label>
+            <!-- <input type="text" formControlName="street" class="form-control" required> -->
 
-    <label>
-      State:
-      <input type="text" formControlName="state" required>
-    </label>
+            <input type="text" formControlName="street" class="form-control" [ngClass]="{ 'is-invalid': profileForm.controls['street']?.touched && f.street.errors }"
+            />
+            <div *ngIf="profileForm.controls['street']?.touched && f.street.errors" class="invalid-feedback">
+              <div *ngIf="f.street.errors.required">{{msgs.required}}</div>
+            </div>
+          </div>
 
-    <label>
-      Zip Code:
-      <input type="text" formControlName="zip" required>
-    </label>
+          <div class="form-group">
+            <label>City:</label>
+            <!-- <input type="text" formControlName="city" class="form-control" required> -->
+
+            <input type="text" formControlName="city" class="form-control" [ngClass]="{ 'is-invalid': profileForm.controls['city']?.touched && f.city.errors }"
+            />
+            <div *ngIf="profileForm.controls['city']?.touched && f.city.errors" class="invalid-feedback">
+              <div *ngIf="f.city.errors.required">{{msgs.required}}</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>State:</label>
+            <!-- <input type="text" formControlName="state" class="form-control" required> -->
+            <input type="text" formControlName="state" class="form-control" [ngClass]="{ 'is-invalid': profileForm.controls['state']?.touched && f.state.errors }"
+            />
+            <div *ngIf="profileForm.controls['state']?.touched && f.state.errors" class="invalid-feedback">
+              <div *ngIf="f.state.errors.required">{{msgs.required}}</div>
+            </div>
+
+          </div>
+
+          <div class="form-group">
+            <label>Zip Code:</label>
+            <!-- <input type="text" formControlName="zip" class="form-control" required> -->
+            <input type="text" formControlName="zip" class="form-control" [ngClass]="{ 'is-invalid': profileForm.controls['zip']?.touched && f.zip.errors }"
+            />
+            <div *ngIf="profileForm.controls['zip']?.touched && f.zip.errors" class="invalid-feedback">
+              <div *ngIf="f.zip.errors.required">{{msgs.required}}</div>
+              <div *ngIf="f.zip.errors?.pattern">{{msgs.zipCode}}</div>
+            </div>
+
+          </div>
+
+          <!-- </div> -->
+
+          <div class="form-group">
+              <div class="row">
+                  <div class="col-md-2">
+                     <button type="submit" class="btn btn-success" [disabled]="!profileForm.valid">Submit</button>
+                  </div>
+                  <div class="col-md-2">
+                     <button type="button" class="btn btn-default" (click)="resetForm()">Reset</button>
+                  </div>
+               </div>
+              </div>
+
+        </form>
+      </div>
+    </div>
   </div>
-
-  <div>
-    <button type="submit" [disabled] = "!profileForm.valid">Submit</button>
-    <button type="button" (click)="resetForm()">Reset</button>
-  </div>
-
-</form>
+</div>
