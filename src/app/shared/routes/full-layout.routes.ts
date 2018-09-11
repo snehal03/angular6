@@ -4,9 +4,14 @@ export const Full_ROUTES: Routes = [
 
   {
     path: 'form',
-
     loadChildren: '../../modules/forms/form-page.module#FormPageModule',
-    // canActivate: [AuthGuard]
   },
-
+  {
+    path: 'fileUpload',
+    loadChildren: '../../modules/file-upload/file-upload.module#FileUploadModule',
+  },
+  {
+    path: 'fileDownload',
+    loadChildren: '../../modules/file-download/file-download.module#FileDownloadModule',
+  },
 ];
