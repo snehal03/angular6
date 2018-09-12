@@ -5,6 +5,10 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './partial-layout.component.html',
   styleUrls: ['./partial-layout.component.css']
 })
+/**
+ * @author - Snehal Dhane
+ * Partial Layout component
+ */
 export class PartialLayoutComponent implements OnInit {
 
   constructor(public router: Router) { }

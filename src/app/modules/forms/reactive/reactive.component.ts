@@ -3,6 +3,11 @@ import { FormGroup, FormControl } from "@angular/forms";
 import { FormBuilder ,Validators } from "@angular/forms";
 import { messages } from '../../../shared/commons/validation.msgs';
 
+
+/***
+ * @author - Snehal Dhane
+ * Reactive Form Component
+ */
 @Component({
   selector: "app-reactive",
   templateUrl: "./reactive.component.html",

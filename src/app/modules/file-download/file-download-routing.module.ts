@@ -17,6 +17,10 @@ const routes: Routes = [
   }
 ];
 
+/***
+ * @author - Snehal Dhane
+ * File Donwload Routing Component
+ */
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],

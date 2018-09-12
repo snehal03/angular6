@@ -17,4 +17,8 @@ import {InjectableServiceRoutingModule} from './injectable-service-routing.modul
   providers: []
 })
 
+/***
+ * @author - Snehal Dhane
+ * Injectable Service Module
+ */
 export class InjectableServiceModule { }

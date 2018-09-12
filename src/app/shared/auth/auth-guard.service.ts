@@ -5,6 +5,7 @@ import { Injectable } from "@angular/core";
   providedIn: 'root',
 })
 /**
+ * @author - Snehal Dhane
  * Auth guard class implements CanActivate
  */
 export class AuthGuard implements CanActivate {

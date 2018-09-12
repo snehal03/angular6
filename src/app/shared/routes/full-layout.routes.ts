@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 
 
 /**
+ *  @author - Snehal Dhane
  * Full laayout routes
  */
 export const Full_ROUTES: Routes = [

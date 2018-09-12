@@ -20,4 +20,8 @@ import { LoginComponent  } from './login.component';
   providers: []
 })
 
+/**
+ * @author - Snehal Dhane
+ * Login Module
+ */
 export class LoginModule { }

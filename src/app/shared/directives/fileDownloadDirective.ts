@@ -4,6 +4,10 @@ import { FileDownloadService } from "./directive-services/fileDownload.service";
 @Directive({
     selector: "[fileDownload]"
  })
+ /**
+  * @author - Snehal Dhane
+  * Directive to download file
+  */
 export class FileDownloadDirective {
 
 

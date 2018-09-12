@@ -1,4 +1,5 @@
 /**
+ * @author - Snehal Dhane
  * User  class for add user to organization
  */
 export class UserModel {

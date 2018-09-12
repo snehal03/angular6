@@ -17,4 +17,8 @@ import {FileUploadRoutingModule} from './file-upload-routing.module';
   providers: []
 })
 
+/***
+ * @author - Snehal Dhane
+ *File Upload Module
+ */
 export class FileUploadModule { }

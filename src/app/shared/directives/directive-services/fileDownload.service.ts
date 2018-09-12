@@ -4,6 +4,7 @@ import { catchError } from "rxjs/operators";
 import { Observable, of } from "rxjs";
 
 /**
+ * @author - Snehal Dhane
  * File Download service contains http services related to File Download
  */
 @Injectable({

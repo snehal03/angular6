@@ -2,6 +2,10 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ObservableService } from '../../services/observable.service';
 import { Subscription } from 'rxjs';
 
+/***
+ * @author - Snehal Dhane
+ * Injectable Service Component
+ */
 @Component({
   selector: 'app-injectable-service',
   templateUrl: './injectable-service.component.html',

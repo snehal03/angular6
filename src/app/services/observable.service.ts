@@ -3,6 +3,7 @@ import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs/BehaviorSubject";
 
 /**
+ * @author - Snehal Dhane
  * Service to notify local storage values
  */
 @Injectable({

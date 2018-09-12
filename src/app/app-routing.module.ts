@@ -9,6 +9,7 @@ import { PARTIAL_ROUTES } from "./shared/routes/partial-layout.routes.";
 import { AuthGuard } from './shared/auth/auth-guard.service';
 
 /**
+ * @author - Snehal Dhane
  * Define routes ,
  * Full Layout contains inside pages after login pages
  * Partial Layout contains Outside pages before login

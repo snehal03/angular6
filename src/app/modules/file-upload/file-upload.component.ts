@@ -1,5 +1,10 @@
 import { Component, OnInit } from "@angular/core";
 
+
+/***
+ * @author - Snehal Dhane
+ * File Upload Component
+ */
 @Component({
   selector: "app-file-upload",
   templateUrl: "./file-upload.component.html",

@@ -7,6 +7,7 @@ import { ObservableService } from './services/observable.service';
   styleUrls: ['./app.component.css']
 })
 /**
+ * @author - Snehal Dhane
  * App componnet class
  */
 export class AppComponent {

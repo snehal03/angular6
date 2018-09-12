@@ -1,3 +1,7 @@
+/**
+ * @author - Snehal Dhane
+ * Application Messages
+ */
 export const messages = {
   required: 'This field is required!',
   invalidEmail: 'Invalid Email!',

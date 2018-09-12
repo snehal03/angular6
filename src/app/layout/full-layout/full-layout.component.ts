@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+/**
+ *  @author - Snehal Dhane
+ * Full Layout component
+ */
 @Component({
   selector: 'app-full-layout',
   templateUrl: './full-layout.component.html',

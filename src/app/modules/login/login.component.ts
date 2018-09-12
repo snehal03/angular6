@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { messages } from '../../shared/commons/validation.msgs';
 
+/***
+ * @author - Snehal Dhane
+ * Login Component
+ */
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

@@ -7,6 +7,7 @@ import * as serviceUrls from "../shared/commons/service-url";
 import { environment } from "../../environments/environment";
 
 /**
+ * @author - Snehal Dhane
  * User service contains http services related to user operations
  */
 @Injectable({

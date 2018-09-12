@@ -18,4 +18,8 @@ import { FileDownloadDirective } from '../../shared/directives/fileDownloadDirec
   // providers: []
 })
 
+/***
+ * @author - Snehal Dhane
+ * File Download Module
+ */
 export class FileDownloadModule { }

@@ -9,6 +9,10 @@ import { PartialLayoutComponent } from './layout/partial-layout/partial-layout.c
 import { HttpClientModule } from '@angular/common/http';
 import { ColorPickerComponent } from './modules/color-picker/color-picker.component';
 
+/**
+ * @author - Snehal Dhane
+ * App Module
+ */
 @NgModule({
   declarations: [
     AppComponent,
