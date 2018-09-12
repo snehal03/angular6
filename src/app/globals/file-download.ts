@@ -20,10 +20,10 @@ export class FileDownloadUtility {
 
 // for reports
   public downloadXlsxFile(response,filename) {
-
-      let blob = new Blob([response._body],{type: 'application/vnd.ms-excel'});
+    console.log("result body--",response.body)
+      let blob = new Blob([response.body],{type: 'application/vnd.ms-excel'});
       let link = document.createElement('a');
-      link.setAttribute('href', 'data:application/vnd.ms-excel;charset=utf-8,' + encodeURIComponent(response._body));
+      link.setAttribute('href', 'data:application/vnd.ms-excel;charset=utf-8,' + encodeURIComponent(response.body));
       link.href = window.URL.createObjectURL(blob);
       link.download =  filename+'.xls';
       link.click();
@@ -52,9 +52,9 @@ export class FileDownloadUtility {
 
 
   public downloadPdf(response,filename = '') {
-    let blob = new Blob([response._body],{type: 'application/pdf'});
+    let blob = new Blob([response.body],{type: 'application/pdf'});
     let link = document.createElement('a');
-    link.setAttribute('href', 'data:application/pdf;charset=utf-8,' + encodeURIComponent(response._body));
+    link.setAttribute('href', 'data:application/pdf;charset=utf-8,' + encodeURIComponent(response.body));
     link.href = window.URL.createObjectURL(blob);
     link.download = filename + '.pdf';
     link.click();

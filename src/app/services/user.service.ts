@@ -10,7 +10,9 @@ import { environment } from "../../environments/environment";
 /**
  * User service contains http services related to user operations
  */
-@Injectable()
+@Injectable({
+  providedIn: 'root',
+})
 export class UserService {
   public httpOptions;
 
@@ -21,7 +23,7 @@ export class UserService {
       this.httpOptions = {
         headers: new HttpHeaders({
           "Content-Type": "application/json",
-          "X-AuthToken": token
+          "Authorization": token
         })
       };
     }
@@ -49,7 +51,7 @@ export class UserService {
 
    /** POST: add user */
    addUser(user: any): Observable<any> {
-    return this.http.post<any>(environment.baseUrl + serviceUrls.addUser, this.httpOptions).pipe(
+    return this.http.post<any>(environment.baseUrl + serviceUrls.addUser,user, this.httpOptions).pipe(
       catchError(this.handleError<any>('add user error '))
     );
   }
