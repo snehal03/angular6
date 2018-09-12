@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ObservableService } from './services/observable.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular6-template';
+
+  constructor(private observableService: ObservableService){
+    this.observableService.sendData({ email:"snehal.dhane11@gmail.com" });
+  }
 }

@@ -9,7 +9,8 @@ import { environment } from "../../environments/environment";
 
 /**
  * User service contains http services related to user operations
- */ @Injectable({
+ */
+ @Injectable({
   providedIn: "root"
 })
 export class UserService {

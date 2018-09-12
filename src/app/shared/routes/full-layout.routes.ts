@@ -14,4 +14,8 @@ export const Full_ROUTES: Routes = [
     path: 'fileDownload',
     loadChildren: '../../modules/file-download/file-download.module#FileDownloadModule',
   },
+  {
+    path: 'injectableService',
+    loadChildren: '../../modules/injectable-service/injectable-service.module#InjectableServiceModule',
+  },
 ];
