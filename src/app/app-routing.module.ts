@@ -6,10 +6,13 @@ import { AppComponent } from "./app.component";
 import { PartialLayoutComponent } from "./layout/partial-layout/partial-layout.component";
 import { Full_ROUTES } from "./shared/routes/full-layout.routes";
 import { PARTIAL_ROUTES } from "./shared/routes/partial-layout.routes.";
-
 import { AuthGuard } from './shared/auth/auth-guard.service';
-// import { ErrorComponent } from './error/error.component';
 
+/**
+ * Define routes ,
+ * Full Layout contains inside pages after login pages
+ * Partial Layout contains Outside pages before login
+ */
 const appRoutes: Routes = [
   {
     path: "",
@@ -36,7 +39,6 @@ const appRoutes: Routes = [
       title: "partial Views"
     },
     children: PARTIAL_ROUTES,
-    // canActivate: [AuthGuard]
   }
   //  {
   //   // path: '**',

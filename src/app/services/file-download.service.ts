@@ -3,12 +3,8 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { catchError } from "rxjs/operators";
 import { Observable, of } from "rxjs";
 
-import * as serviceUrls from "../globals/service-url";
-import { environment } from "../../environments/environment";
-// import { UserModel } from "../models/userModel";
-
 /**
- * User service contains http services related to user operations
+ * File Download service contains http services related to File Download
  */
  @Injectable({
   providedIn: "root"
@@ -38,8 +34,11 @@ export class UserService {
     };
   }
 
-  /** POST: download file */
-  /* downloadFile(fileType: any): Observable<Blob> {
+/**
+ * Dowanlod, xlsx, csv, pdf files from api
+ * @param fileType type of file to download
+ */
+ downloadFile(fileType: any): Observable<Blob> {
     let headers = {
       "Content-Type": "application/json",
       Authorization:
@@ -68,22 +67,5 @@ export class UserService {
       )
       .pipe(catchError(this.handleError<any>("file download error ")));
   }
-*/
 
-  downloadFile(fileType: any): Observable<Blob> {
-    let headers = {
-      "Content-Type": "application/json"
-    };
-
-    this.httpOptions = {
-      headers: new HttpHeaders(headers),
-      observe: "response",
-      responseType: "blob"
-    };
-
-    console.log("httpOptions", this.httpOptions);
-    return this.http
-      .get<any>("http://file-examples.com/wp-content/uploads/2017/02/file_example_XLS_10.xls", this.httpOptions)
-      .pipe(catchError(this.handleError<any>("file download error ")));
-  }
 }

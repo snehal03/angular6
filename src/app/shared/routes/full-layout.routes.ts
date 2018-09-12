@@ -1,5 +1,9 @@
 import { Routes } from '@angular/router';
 
+
+/**
+ * Full laayout routes
+ */
 export const Full_ROUTES: Routes = [
 
   {
