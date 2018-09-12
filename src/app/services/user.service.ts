@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { catchError} from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 
-import * as serviceUrls from "../globals/service-url";
+import * as serviceUrls from "../shared/commons/service-url";
 import { environment } from "../../environments/environment";
 
 /**

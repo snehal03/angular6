@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserModel } from '../../../models/userModel';
-import { messages } from '../../../globals/validation.msgs';
+import { messages } from '../../../shared/commons/validation.msgs';
 @Component({
   selector: 'app-template-driven',
   templateUrl: './template-driven.component.html',

@@ -14,15 +14,6 @@ export class FileDownloadService {
 
   constructor(private http: HttpClient) {
     // let token = localStorage.getItem("token");
-    let token; //your token
-    if (token) {
-      this.httpOptions = {
-        headers: new HttpHeaders({
-          "Content-Type": "application/json",
-          Authorization: token
-        })
-      };
-    }
   }
 
   private handleError<T>(operation = "operation", result?: T) {
@@ -39,11 +30,18 @@ export class FileDownloadService {
    * @param fileType type of file to download
    */
   downloadFile(url: any, method: any, apiBody: any, token:any): Observable<Blob> {
-    let headers = {
-      "Content-Type": "application/json",
-      Authorization:token
+    let headers = {};
+    if(token!='' && token!= undefined){
+       headers = {
+        "Content-Type": "application/json",
+        Authorization:token
+      };
+    }else {
+      headers = {
+        "Content-Type": "application/json",
+      };
+    }
 
-    };
 
     this.httpOptions = {
       headers: new HttpHeaders(headers),
@@ -53,8 +51,7 @@ export class FileDownloadService {
 
     const body = apiBody;
 
-    console.log("services----------",apiBody)
-    if (method.toUpperCase() == "GET") {
+     if (method.toUpperCase() == "GET") {
 
       return this.http .get<any>(url,  this.httpOptions)
         .pipe(catchError(this.handleError<any>("file download error ")));

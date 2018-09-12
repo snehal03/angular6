@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { messages } from "../../globals/validation.msgs";
+import { messages } from "../../shared/commons/validation.msgs";
 @Component({
   selector: "app-file-download",
   templateUrl: "./file-download.component.html",

@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormGroup, FormControl } from "@angular/forms";
 import { FormBuilder ,Validators } from "@angular/forms";
-import { messages } from '../../../globals/validation.msgs';
+import { messages } from '../../../shared/commons/validation.msgs';
 
 @Component({
   selector: "app-reactive",

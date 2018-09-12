@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { messages } from '../../globals/validation.msgs';
+import { messages } from '../../shared/commons/validation.msgs';
 
 @Component({
   selector: 'app-login',
