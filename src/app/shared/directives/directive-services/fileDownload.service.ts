@@ -6,10 +6,10 @@ import { Observable, of } from "rxjs";
 /**
  * File Download service contains http services related to File Download
  */
- @Injectable({
+@Injectable({
   providedIn: "root"
 })
-export class UserService {
+export class FileDownloadService {
   public httpOptions;
 
   constructor(private http: HttpClient) {
@@ -34,38 +34,43 @@ export class UserService {
     };
   }
 
-/**
- * Dowanlod, xlsx, csv, pdf files from api
- * @param fileType type of file to download
- */
- downloadFile(fileType: any): Observable<Blob> {
+  /**
+   * Dowanlod, xlsx, csv, pdf files from api
+   * @param fileType type of file to download
+   */
+  downloadFile(url: any, method: any, apiBody: any, token:any): Observable<Blob> {
     let headers = {
       "Content-Type": "application/json",
-      Authorization:
-        "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJud2Fpa2FyQGFnc2Z0LmNvbSIsImF1ZGllbmNlIjoibW9iaWxlIiwicGFzcyI6IiQyYSQxMCRNZzd1aHdSOGtpL3gzZlp4alRnWUouMFhhZk5rRXZQUDRPWi54ZVpUeWNjQnhRSVl6SEdTeSIsImNyZWF0ZWQiOjE1MzY2NjgwODMwODF9.qfHQ70ysbGTsQVB8y7efxwkFDAD1lLgccbFd6ebeHxAHIahyF3QKG-fk4tm1mnp7x9vaEcUksEWzK0c1XN3NJw"
+      Authorization:token
+
     };
 
-      this.httpOptions = {
-        headers: new HttpHeaders(headers),
-        observe: "response",
-        responseType: "blob"
-      };
-
-    const body = {
-      criteriaName: "date",
-      range: {
-        minimum: "2018-9-01",
-        maximum: "2018-10-27"
-      }
+    this.httpOptions = {
+      headers: new HttpHeaders(headers),
+      observe: "response",
+      responseType: "blob"
     };
+
+    const body = apiBody;
+
+    console.log("services----------",apiBody)
+    if (method.toUpperCase() == "GET") {
+
+      return this.http .get<any>(url,  this.httpOptions)
+        .pipe(catchError(this.handleError<any>("file download error ")));
+
+    } else if (method.toUpperCase() == "POST") {
+
+      return this.http.post<any>(url, body, this.httpOptions)
+        .pipe(catchError(this.handleError<any>("file download error ")));
+
+    } else if (method.toUpperCase() == "PUT") {
+
+      return this.http.put<any>(url, body, this.httpOptions)
+        .pipe(catchError(this.handleError<any>("file download error ")));
+
+    }
     console.log("httpOptions", this.httpOptions);
-    return this.http
-      .post<any>(
-        "http://wazoo.trackwayz.com/wazooapi/downloadReport?fileType=CSV&partnerId=5b33b014c8ba7127efb79fa0",
-        body,
-        this.httpOptions
-      )
-      .pipe(catchError(this.handleError<any>("file download error ")));
   }
 
 }

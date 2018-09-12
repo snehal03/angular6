@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PartialLayoutComponent } from './layout/partial-layout/partial-layout.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FileDownloadUtility } from './globals/file-download';
 import { ColorPickerComponent } from './modules/color-picker/color-picker.component';
 
 @NgModule({
@@ -23,7 +22,7 @@ import { ColorPickerComponent } from './modules/color-picker/color-picker.compon
     NgbModule.forRoot(),
     HttpClientModule
   ],
-  providers: [ FileDownloadUtility],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

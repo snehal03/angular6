@@ -1,22 +1,45 @@
-export class FileDownloadUtility {
-  // private saveFile(blob, fileName) {
-  //     const downloadLink = document.createElement('a');
-  //     downloadLink.target = '_blank';
-  //     downloadLink.download = fileName;
-  //     const URL = window.URL || (window as any).webkitURL;
-  //     const downloadUrl = URL.createObjectURL(blob);
-  //     downloadLink.href = downloadUrl;
-  //     document
-  //         .querySelector('body')
-  //         .appendChild(downloadLink);
-  //     downloadLink.click();
-  //     document
-  //         .querySelector('body')
-  //         .removeChild(downloadLink);
-  //     URL.revokeObjectURL(downloadUrl);
-  // }
+import { Directive, ElementRef, HostListener, Input, Renderer2 } from "@angular/core";
+import { FileDownloadService } from "./directive-services/fileDownload.service";
 
-  // ************ for reports
+@Directive({
+    selector: "[fileDownload]"
+ })
+export class FileDownloadDirective {
+
+
+  constructor(elem: ElementRef, private fileDownloadService : FileDownloadService) {
+
+ }
+
+  @Input() url: string;
+  @Input() methodType: string;
+  @Input() fileType: string;
+  @Input() apiBody: string;
+  @Input() token: string;
+
+  @HostListener("click")
+  click() {
+    this.downloadFileService();
+
+  }
+
+
+  private downloadFileService() {
+    this.fileDownloadService.downloadFile(this.url, this.methodType, this.apiBody, this.token).subscribe(
+      result => {
+        if (this.fileType.toUpperCase() == 'PDF'.toUpperCase()) {
+          this.downloadPdf(result, 'filename');
+        } else if (this.fileType.toUpperCase() == 'XLS'.toUpperCase()) {
+          this.downloadXlsxFile(result, 'filename');
+        } else if (this.fileType.toUpperCase() == 'CSV'.toUpperCase()) {
+          this.downloadCsv(result, 'filename');
+        }
+      },
+      error => {}
+    );
+  }
+
+
 
   /**
    * download xls file
@@ -79,4 +102,7 @@ export class FileDownloadUtility {
     link.download = filename + '.pdf';
     link.click();
   }
+
+
+
 }

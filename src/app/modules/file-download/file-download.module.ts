@@ -6,6 +6,7 @@ import { FormsModule , ReactiveFormsModule} from '@angular/forms';
 /** User Defined imports */
 import { FileDownloadComponent  } from './file-download.component';
 import {FileDownloadRoutingModule} from './file-download-routing.module';
+import { FileDownloadDirective } from '../../shared/directives/fileDownloadDirective';
 
 @NgModule({
   imports: [
@@ -13,7 +14,7 @@ import {FileDownloadRoutingModule} from './file-download-routing.module';
     FormsModule,
     FileDownloadRoutingModule, ReactiveFormsModule
   ],
-  declarations: [FileDownloadComponent],
+  declarations: [FileDownloadComponent, FileDownloadDirective],
   // providers: []
 })
 
