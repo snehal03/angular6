@@ -5,7 +5,6 @@ import { Observable, of } from 'rxjs';
 
 import * as serviceUrls from "../globals/service-url";
 import { environment } from "../../environments/environment";
-// import { UserModel } from "../models/userModel";
 
 /**
  * User service contains http services related to user operations

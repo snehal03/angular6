@@ -5,7 +5,6 @@ import { BehaviorSubject } from "rxjs/BehaviorSubject";
 /**
  * Service to notify local storage values
  */
-
 @Injectable({
   providedIn: "root"
 })
