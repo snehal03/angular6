@@ -31,9 +31,12 @@ export class FileDownloadUtility {
   }
 
 
-  downloadCsv(data: any, filename: string) {
-      let parsedResponse = data.text();
-      let blob = new Blob([parsedResponse], { type: 'text/csv' });
+
+  downloadCsv(response: any, filename: string) {
+    console.log("data",response)
+    // console.log("data.text()",response.text())
+      // let parsedResponse = response.text();
+      let blob = new Blob([response.body], { type: 'text/csv' });
       let url = window.URL.createObjectURL(blob);
 
 

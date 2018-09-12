@@ -38,7 +38,7 @@ export class UserService {
   }
 
   /** POST: download file */
-  downloadPDF_XLSXFile(fileType: any): Observable<Blob> {
+  /* downloadFile(fileType: any): Observable<Blob> {
     let headers = {
       "Content-Type": "application/json",
       Authorization:
@@ -61,40 +61,28 @@ export class UserService {
     console.log("httpOptions", this.httpOptions);
     return this.http
       .post<any>(
-        "http://wazoo.trackwayz.com/wazooapi/downloadReport?fileType=XLS&partnerId=5b33b014c8ba7127efb79fa0",
+        "http://wazoo.trackwayz.com/wazooapi/downloadReport?fileType=CSV&partnerId=5b33b014c8ba7127efb79fa0",
         body,
         this.httpOptions
       )
       .pipe(catchError(this.handleError<any>("file download error ")));
   }
+*/
 
-  /** POST: download file */
-  downloadCSVFile(fileType: any): Observable<any> {
+  downloadFile(fileType: any): Observable<Blob> {
     let headers = {
-      "Content-Type": "application/json",
-      Authorization:
-        "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJud2Fpa2FyQGFnc2Z0LmNvbSIsImF1ZGllbmNlIjoibW9iaWxlIiwicGFzcyI6IiQyYSQxMCRNZzd1aHdSOGtpL3gzZlp4alRnWUouMFhhZk5rRXZQUDRPWi54ZVpUeWNjQnhRSVl6SEdTeSIsImNyZWF0ZWQiOjE1MzY2NjgwODMwODF9.qfHQ70ysbGTsQVB8y7efxwkFDAD1lLgccbFd6ebeHxAHIahyF3QKG-fk4tm1mnp7x9vaEcUksEWzK0c1XN3NJw"
+      "Content-Type": "application/json"
     };
 
     this.httpOptions = {
       headers: new HttpHeaders(headers),
+      observe: "response",
       responseType: "blob"
     };
 
-    const body = {
-      criteriaName: "date",
-      range: {
-        minimum: "2018-9-01",
-        maximum: "2018-10-27"
-      }
-    };
     console.log("httpOptions", this.httpOptions);
     return this.http
-      .post<any>(
-        "http://wazoo.trackwayz.com/wazooapi/downloadReport?fileType=CSV&partnerId=5b33b014c8ba7127efb79fa0",
-        body,
-        this.httpOptions
-      )
+      .get<any>("http://file-examples.com/wp-content/uploads/2017/02/file_example_XLS_10.xls", this.httpOptions)
       .pipe(catchError(this.handleError<any>("file download error ")));
   }
 }

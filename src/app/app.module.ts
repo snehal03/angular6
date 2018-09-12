@@ -6,7 +6,7 @@ import { FullLayoutComponent } from './layout/full-layout/full-layout.component'
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PartialLayoutComponent } from './layout/partial-layout/partial-layout.component';
-import { AuthGuard } from './shared/auth/auth-guard.service';
+// import { AuthGuard } from './shared/auth/auth-guard.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FileDownloadUtility } from './globals/file-download';
 
@@ -22,7 +22,7 @@ import { FileDownloadUtility } from './globals/file-download';
     NgbModule.forRoot(),
     HttpClientModule
   ],
-  providers: [AuthGuard, FileDownloadUtility],
+  providers: [ FileDownloadUtility],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
