@@ -14,6 +14,10 @@ export class FileUploadComponent implements OnInit {
 
   ngOnInit() {}
 
+  /**
+   * Upload single file
+   * @param event file data
+   */
   getFiles(event) {
     this.imageFileName = "";
 
@@ -34,12 +38,16 @@ export class FileUploadComponent implements OnInit {
       reader1.onload = this._handleReaderLoaded.bind(this);
       reader1.readAsBinaryString(this.files[0]);
 
-      console.log(this.files[0])
+      console.log(this.files[0]);
       /*
       this.files[0].contains single selcted file
       */
     }
   }
+  /**
+   * Convert  file data into blob
+   * @param readerEvt current file
+   */
   _handleReaderLoaded(readerEvt) {
     var binaryString = readerEvt.target.result;
     let base64textString = btoa(binaryString);

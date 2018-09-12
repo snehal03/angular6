@@ -15,7 +15,7 @@ export class TemplateDrivenComponent implements OnInit {
   ngOnInit() {
   }
 
-
+// form submit method
   onSubmit() {
     console.log('userModel', this.userModel);
   }

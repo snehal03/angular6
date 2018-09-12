@@ -25,15 +25,15 @@ export class InjectableServiceComponent implements OnInit , OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  getDataFromObservableService(){
+  getDataFromObservableService() {
     /**
      * Data sent fro app.component.ts
      * ex: -   this.observableService.sendData({ email:"snehal.dhane11@gmail.com" });
      * Subscribe for observable service , and get pushed data
      */
-    this.subscription =  this.observableService.notifyObservable$.subscribe((res:any)=>{
+    this.subscription =  this.observableService.notifyObservable$.subscribe((res: any) => {
         this.userEmail = res.email;
-    })
+    });
   }
 
 }

@@ -11,7 +11,7 @@ import {FileDownloadRoutingModule} from './file-download-routing.module';
   imports: [
     CommonModule,
     FormsModule,
-    FileDownloadRoutingModule,ReactiveFormsModule
+    FileDownloadRoutingModule, ReactiveFormsModule
   ],
   declarations: [FileDownloadComponent],
   // providers: []

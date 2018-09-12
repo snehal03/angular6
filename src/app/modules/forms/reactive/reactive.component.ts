@@ -9,35 +9,17 @@ import { messages } from '../../../globals/validation.msgs';
   styleUrls: ["./reactive.component.css"]
 })
 export class ReactiveComponent implements OnInit {
-  // profileForm = new FormGroup({
-  //   firstName: new FormControl("",Validators.required),
-  //   lastName: new FormControl(""),
-  //   address: new FormGroup({
-  //     street: new FormControl(""),
-  //     city: new FormControl(""),
-  //     state: new FormControl(""),
-  //     zip: new FormControl("")
-  //   })
-  // });
+
     profileForm: FormGroup;
     submitted = false;
     readonly msgs = messages;
     zipCodePattern = '^[0-9]{5,8}$';
     constructor(private formBuilder: FormBuilder) { }
 
-  // profileForm = this.fb.group({
-  //   firstName: ["", [Validators.required]],
-  //   lastName: ["",[Validators.required]],
-  //   address: this.fb.group({
-  //     street: ["", [Validators.required]],
-  //     city: ["",[Validators.required]],
-  //     state: ["", [Validators.required]],
-  //     zip: ["", [Validators.required]],
-  //   })
-  // });
-  // constructor(private fb: FormBuilder) {}
+
 
   ngOnInit() {
+    // reactive form validations
     this.profileForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -53,6 +35,7 @@ export class ReactiveComponent implements OnInit {
 
   get f() { return this.profileForm.controls; }
 
+  // form submit method
   onSubmit() {
     this.submitted = true;
 
@@ -66,7 +49,7 @@ export class ReactiveComponent implements OnInit {
 
     alert('SUCCESS!! :-)');
   }
-
+// reset form data
   resetForm() {
     this.profileForm.reset();
   }

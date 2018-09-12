@@ -9,12 +9,14 @@ import { PartialLayoutComponent } from './layout/partial-layout/partial-layout.c
 // import { AuthGuard } from './shared/auth/auth-guard.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FileDownloadUtility } from './globals/file-download';
+import { ColorPickerComponent } from './modules/color-picker/color-picker.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FullLayoutComponent,
-    PartialLayoutComponent
+    PartialLayoutComponent,
+    ColorPickerComponent
   ],
   imports: [
     BrowserModule,

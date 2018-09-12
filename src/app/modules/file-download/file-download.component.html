@@ -11,22 +11,22 @@
                 [ngClass]="{ 'is-invalid': fileurl.invalid && (fileurl.dirty || fileurl.touched) }" >
                 <div *ngIf="fileurl.invalid && (fileurl.dirty || fileurl.touched)" class="invalid-feedback">
                     <div *ngIf="fileurl?.errors?.required">{{msgs.required}}</div>
-
-                 </div>
+                </div>
             </div>
+
             <div class="form-group">
-                  <label for="exampleInputEmail1"> File Type </label>
-
-                  <select name="filetype" class="form-control" name="file_type" [(ngModel)]="file_typeModel" style="width:100%;">
-                    <option [value]="'CSV'">CSV </option>
-                    <option [value]="'PDF'"> PDF </option>
-                    <option [value]="'XLS'"> XLSX</option>
-                  </select>
-                  <!-- <div *ngIf="mimetype.invalid && (mimetype.dirty || mimetype.touched)" class="invalid-feedback"> -->
-                      <!-- <div *ngIf="!isFileTypeSelected">{{msgs.required}}</div> -->
-
-                   <!-- </div> -->
+              <label for="alterEgo"> File Type </label>
+              <select name="filetype" class="form-control" [(ngModel)]="file_typeModel" style="width:100%;" required #filetype="ngModel"
+                [ngClass]="{ 'is-invalid': filetype.invalid && (filetype.dirty || filetype.touched) }">
+                <option [value]="'CSV'">CSV </option>
+                <option [value]="'PDF'"> PDF </option>
+                <option [value]="'XLS'"> XLS</option>
+              </select>
+              <div *ngIf="filetype.invalid && (filetype.dirty || filetype.touched)" class="invalid-feedback">
+                <div *ngIf="filetype?.errors?.required">{{msgs.required}}</div>
+              </div>
             </div>
+
 
             <div class="form-group">
                 <label for="alterEgo">MIME Type</label>
@@ -34,9 +34,8 @@
                   [ngClass]="{ 'is-invalid': mimetype.invalid && (mimetype.dirty || mimetype.touched) }" >
                   <div *ngIf="mimetype.invalid && (mimetype.dirty || mimetype.touched)" class="invalid-feedback">
                       <div *ngIf="mimetype?.errors?.required">{{msgs.required}}</div>
-
                    </div>
-              </div>
+            </div>
 
             <button type="submit" class="btn btn-success" [disabled]="!fileDownloadForm.form.valid">Download</button>
           </form>
