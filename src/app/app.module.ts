@@ -6,8 +6,9 @@ import { FullLayoutComponent } from './layout/full-layout/full-layout.component'
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PartialLayoutComponent } from './layout/partial-layout/partial-layout.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ColorPickerComponent } from './modules/color-picker/color-picker.component';
+import { AppHttpInterceptor } from './shared/commons/appHttpInterceptor';
 
 /**
  * @author - Snehal Dhane
@@ -26,7 +27,11 @@ import { ColorPickerComponent } from './modules/color-picker/color-picker.compon
     NgbModule.forRoot(),
     HttpClientModule
   ],
-  providers: [],
+  providers: [ {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AppHttpInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

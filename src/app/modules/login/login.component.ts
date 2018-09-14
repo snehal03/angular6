@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { messages } from '../../shared/commons/validation.msgs';
 
 /***
- * @author - Snehal Dhane
+ * @author - Rashmi Ghatage
  * Login Component
  */
 @Component({
