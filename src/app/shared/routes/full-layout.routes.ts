@@ -23,4 +23,8 @@ export const Full_ROUTES: Routes = [
     path: 'injectableService',
     loadChildren: '../../modules/injectable-service/injectable-service.module#InjectableServiceModule',
   },
+  {
+    path: 'colorPicker',
+    loadChildren: '../../modules/color-picker/color-picker.module#ColorPickerComModule',
+  },
 ];

@@ -1,4 +1,4 @@
-import * as serviceUrls from "../../shared/commons/service-url";
+import * as serviceUrls from "./service-url";
 
  export const openApis = [serviceUrls.addUser , serviceUrls.dowanlodFile];
 

@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PartialLayoutComponent } from './layout/partial-layout/partial-layout.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { ColorPickerComponent } from './modules/color-picker/color-picker.component';
 import { AppHttpInterceptor } from './shared/commons/appHttpInterceptor';
 
 /**
@@ -19,7 +18,6 @@ import { AppHttpInterceptor } from './shared/commons/appHttpInterceptor';
     AppComponent,
     FullLayoutComponent,
     PartialLayoutComponent,
-    ColorPickerComponent
   ],
   imports: [
     BrowserModule,
