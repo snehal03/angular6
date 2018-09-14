@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
  */
 export class ColorPickerComponent implements OnInit {
 
-  public selectedColor: any;
+  public selectedColor: any ='red';
 
   constructor() { }
 

@@ -9,6 +9,7 @@ import { PartialLayoutComponent } from './layout/partial-layout/partial-layout.c
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppHttpInterceptor } from './shared/commons/appHttpInterceptor';
 
+
 /**
  * @author - Snehal Dhane
  * App Module
@@ -18,6 +19,7 @@ import { AppHttpInterceptor } from './shared/commons/appHttpInterceptor';
     AppComponent,
     FullLayoutComponent,
     PartialLayoutComponent,
+
   ],
   imports: [
     BrowserModule,

@@ -24,7 +24,6 @@ export class ObservableService {
    * @param data data to store
    */
   sendData(data: any): void {
-    console.log("ObservableService , data", data);
     this.notify.next(data);
   }
 }

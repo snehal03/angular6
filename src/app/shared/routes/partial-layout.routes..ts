@@ -8,7 +8,8 @@ export const PARTIAL_ROUTES: Routes = [
 
   {
     path: 'login',
-    loadChildren: '../../modules/login/login.module#LoginModule',
+    // loadChildren: '../../modules/login/login.module#LoginModule',
+    loadChildren: 'src/app/modules/login/login.module#LoginModule',
   },
 
 ];
