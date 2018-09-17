@@ -36,4 +36,12 @@ export const Full_ROUTES: Routes = [
     path: 'modal',
     loadChildren: 'src/app/modules/modal/modal.module#ModalModule',
   },
+  {
+    path: 'filterPipe',
+    loadChildren: 'src/app/modules/filter-pipe/filter-pipe.module#FilterPipeModule',
+  },
+  {
+    path: 'tables',
+    loadChildren: 'src/app/modules/tables/tables.module#TablesModule',
+  },
 ];
