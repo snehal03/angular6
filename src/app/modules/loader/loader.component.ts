@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {SpinnerComponent} from '../../shared/modules/spinner/spinner.component';
 @Component({
   selector: 'app-loader',
   templateUrl: './loader.component.html',

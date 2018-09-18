@@ -6,16 +6,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 /** User Defined imports */
 import { LoaderComponent  } from './loader.component';
 import {LoaderRoutingModule} from './loader-routing.module';
-import { LoaderDirective } from '../../shared/directives/loaderDirective';
+import { SpinnerModule } from '../../shared/modules/spinner/spinner.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    LoaderRoutingModule
+    LoaderRoutingModule,
+    SpinnerModule
   ],
-  declarations: [LoaderComponent,LoaderDirective],
+  declarations: [LoaderComponent],
   providers: []
 })
 
