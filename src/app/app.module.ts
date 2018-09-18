@@ -8,6 +8,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PartialLayoutComponent } from './layout/partial-layout/partial-layout.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppHttpInterceptor } from './shared/commons/appHttpInterceptor';
+import { ToastMessagesComponent } from './shared/modules/toaster/toast.component';
+import { ToastService } from './shared/modules/toaster/toast.service';
 
 
 /**
@@ -19,6 +21,7 @@ import { AppHttpInterceptor } from './shared/commons/appHttpInterceptor';
     AppComponent,
     FullLayoutComponent,
     PartialLayoutComponent,
+    ToastMessagesComponent
 
   ],
   imports: [
@@ -27,7 +30,9 @@ import { AppHttpInterceptor } from './shared/commons/appHttpInterceptor';
     NgbModule.forRoot(),
     HttpClientModule
   ],
-  providers: [ {
+  providers: [
+    ToastService,
+    {
     provide: HTTP_INTERCEPTORS,
     useClass: AppHttpInterceptor,
     multi: true
