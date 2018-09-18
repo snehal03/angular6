@@ -44,4 +44,8 @@ export const Full_ROUTES: Routes = [
     path: 'tables',
     loadChildren: 'src/app/modules/tables/tables.module#TablesModule',
   },
+  {
+    path: 'loader',
+    loadChildren: 'src/app/modules/loader/loader.module#LoaderModule',
+  },
 ];
