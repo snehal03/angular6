@@ -17,7 +17,8 @@
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" class="form-control" name="password" [(ngModel)]="loginModel.password" #password="ngModel" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s)(?=.*[*@_$#!&]).{8,12}$"
+            <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s)(?=.*[*@_$#!&]).{8,12}$ -->
+            <input type="password" class="form-control" name="password" [(ngModel)]="loginModel.password" #password="ngModel" pattern="(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[*@_$#!&]).([a-zA-Z0-9*@_$#!&]{8,20})$"
               [ngClass]="{ 'is-invalid': password.invalid && (password.dirty || password.touched) }" required minlength="8"
             />
             <div *ngIf="password.invalid && (password.dirty || password.touched)" class="invalid-feedback">
