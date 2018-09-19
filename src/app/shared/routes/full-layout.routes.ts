@@ -52,4 +52,8 @@ export const Full_ROUTES: Routes = [
     path: 'toaster',
     loadChildren: 'src/app/modules/my-toaster/my-toaster.module#MyToasterModule',
   },
+  {
+    path: 'button',
+    loadChildren: 'src/app/modules/buttons/buttons.module#ButtonsModule',
+  },
 ];
