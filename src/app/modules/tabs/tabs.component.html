@@ -1,4 +1,4 @@
-<ngb-tabset #tabset="ngbTabset" type="pills" (tabChange)="onTabChange($event)">
+<ngb-tabset #tabset="ngbTabset" type="pills" [activeId]="selectedTab" (tabChange)="onTabChange($event)">
   <ngb-tab id="firstTab" class="btnc">
     <ng-template ngbTabTitle>
       <strong class="font-small-3">First Tab</strong>

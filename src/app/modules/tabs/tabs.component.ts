@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 
 import { NgbTabChangeEvent } from "@ng-bootstrap/ng-bootstrap";
 import { NgbTabset } from "@ng-bootstrap/ng-bootstrap";
@@ -9,11 +9,15 @@ import { NgbTabset } from "@ng-bootstrap/ng-bootstrap";
   styleUrls: ["./tabs.component.css"]
 })
 export class TabsComponent implements OnInit {
-  public tabset: NgbTabset;
+
+  @ViewChild('tabset') public tabset: NgbTabset;
+  selectedTab: string;
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.selectedTab= 'secondTab';
+  }
 
   public onTabChange($event: NgbTabChangeEvent) {
     if ($event.nextId === "firstTab") {
