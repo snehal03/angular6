@@ -56,4 +56,8 @@ export const Full_ROUTES: Routes = [
     path: 'button',
     loadChildren: 'src/app/modules/buttons/buttons.module#ButtonsModule',
   },
+  {
+    path: 'dateTime',
+    loadChildren: 'src/app/modules/date-time-picker/date-time-picker.module#DateTimePickerModule',
+  },
 ];
