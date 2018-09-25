@@ -64,4 +64,8 @@ export const Full_ROUTES: Routes = [
     path: 'selectSearch',
     loadChildren: 'src/app/modules/select-search/select-search.module#SelectSearchModule',
   },
+  {
+    path: 'tabs',
+    loadChildren: 'src/app/modules/tabs/tabs.module#TabsModule',
+  },
 ];

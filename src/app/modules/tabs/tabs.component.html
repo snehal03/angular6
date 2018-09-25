@@ -1,0 +1,19 @@
+<ngb-tabset #tabset="ngbTabset" type="pills" (tabChange)="onTabChange($event)">
+  <ngb-tab id="firstTab" class="btnc">
+    <ng-template ngbTabTitle>
+      <strong class="font-small-3">First Tab</strong>
+    </ng-template>
+    <ng-template ngbTabContent>
+        First Tab Content
+    </ng-template>
+  </ngb-tab>
+  <ngb-tab id="secondTab" class="btnc">
+    <ng-template ngbTabTitle>
+      <strong class="font-small-3">Second Tab</strong>
+    </ng-template>
+    <ng-template ngbTabContent>
+        Second Tab content
+    </ng-template>
+  </ngb-tab>
+
+</ngb-tabset>
