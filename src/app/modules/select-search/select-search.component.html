@@ -1,0 +1,5 @@
+
+<div class="offset-3 col-md-3  pl-0">
+  <app-search [dataList]="userData" [(expc)]="expandCollapse" [placeHolder]="'Search User'" [selectedvalue]="{name:'' , id:'1'}"
+    (selectChanges)="userSelectionChanged($event)" (searchChanges)="changed($event)" class="font-small-3"></app-search>
+</div>

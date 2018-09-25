@@ -60,4 +60,8 @@ export const Full_ROUTES: Routes = [
     path: 'dateTime',
     loadChildren: 'src/app/modules/date-time-picker/date-time-picker.module#DateTimePickerModule',
   },
+  {
+    path: 'selectSearch',
+    loadChildren: 'src/app/modules/select-search/select-search.module#SelectSearchModule',
+  },
 ];
