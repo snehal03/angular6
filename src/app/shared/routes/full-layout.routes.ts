@@ -9,8 +9,8 @@ export const Full_ROUTES: Routes = [
 
   {
     path: 'form',
-    loadChildren: 'src/app/modules/file-upload/file-upload.module#FileUploadModule'
-    // loadChildren: '../../modules/forms/form-page.module#FormPageModule',
+    // loadChildren: 'src/app/modules/file-upload/file-upload.module#FileUploadModule'
+    loadChildren: '../../modules/forms/form-page.module#FormPageModule',
   },
   {
     path: 'fileUpload',

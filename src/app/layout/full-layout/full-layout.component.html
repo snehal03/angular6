@@ -1,2 +1,31 @@
-<!-- Full layout contains application sidebar and navbar -->
-<router-outlet></router-outlet>
+<div class="nav-side-menu">
+  <div class="brand">Brand Logo</div>
+  <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+  <div class="menu-list">
+
+    <ul id="menu-content" class="menu-content collapse out" *ngFor="let menu of menuItems">
+      <li *ngIf="!menu.submenu || (menu.submenu && menu.submenu.length==0)">
+        <a  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"  [routerLink]="[menu.link]">
+          <i [ngClass]="menu.icon"></i> {{menu.displayName}}</a>
+      </li>
+      <li *ngIf="menu.submenu && menu.submenu.length !==0" data-toggle="collapse" data-target="#manage" class="collapsed">
+        <a>
+          <i [ngClass]="menu.icon"></i> {{menu.displayName}}
+          <span class="arrow"></span>
+        </a>
+      </li>
+      <ul *ngIf="menu.submenu && menu.submenu.length !==0" class="sub-menu collapse" id="manage">
+        <li *ngFor="let submenu of menu.submenu">
+          <a  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"  [routerLink]="[menu.link+submenu.link]">
+            <i [ngClass]="submenu.icon"></i> {{submenu.displayName}}</a>
+        </li>
+      </ul>
+
+    </ul>
+  </div>
+</div>
+
+<div class="main">
+  <router-outlet></router-outlet>
+</div>

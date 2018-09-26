@@ -10,7 +10,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppHttpInterceptor } from './shared/commons/appHttpInterceptor';
 import { ToastMessagesComponent } from './shared/modules/toaster/toast.component';
 import { ToastService } from './shared/modules/toaster/toast.service';
-
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 /**
  * @author - Snehal Dhane
@@ -25,10 +25,12 @@ import { ToastService } from './shared/modules/toaster/toast.service';
 
   ],
   imports: [
+    NgxSpinnerModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [
     ToastService,
