@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
+declare var $;
+
 /**
  *  @author - Snehal Dhane
  * Full Layout component
@@ -119,5 +121,16 @@ export class FullLayoutComponent implements OnInit {
   ];
   constructor(public router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+  }
+
+  sidebarCollapseClick(){
+    $('#sidebar, #content').toggleClass('active');
+    $('.collapse.in').toggleClass('in');
+    $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+  }
 }

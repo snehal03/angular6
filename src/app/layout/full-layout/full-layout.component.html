@@ -1,4 +1,4 @@
-<div class="nav-side-menu">
+<!-- <div class="nav-side-menu">
   <div class="brand">Brand Logo</div>
   <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 
@@ -28,4 +28,61 @@
 
 <div class="main">
   <router-outlet></router-outlet>
+</div> -->
+
+
+
+
+
+<div class="wrapper">
+  <!-- Sidebar Holder -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <h3>Logo</h3>
+    </div>
+
+    <ul class="list-unstyled components">
+          <p>Angular Template </p>
+          <li *ngFor="let menu of menuItems">
+              <a *ngIf="!menu.submenu || (menu.submenu && menu.submenu.length==0)"  [routerLink]="[menu.link]">
+                      <i [ngClass]="menu.icon"></i> {{menu.displayName}}
+              </a>
+              <a *ngIf="menu.submenu && menu.submenu.length !==0" href="#submenu" data-toggle="collapse" aria-expanded="false">
+                  <i [ngClass]="menu.icon"></i> {{menu.displayName}}
+                  <span class="arrow"></span>
+              </a>
+              <ul class="collapse list-unstyled" id="submenu" *ngIf="menu.submenu && menu.submenu.length !==0">
+                  <li *ngFor="let submenu of menu.submenu">
+                      <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [routerLink]="[menu.link+submenu.link]">
+                          <i [ngClass]="submenu.icon"></i> {{submenu.displayName}}</a>
+                  </li>
+
+              </ul>
+          </li>
+
+      </ul>
+
+  </nav>
+
+  <!-- Page Content Holder -->
+  <div id="content">
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+
+        <div class="navbar-header">
+          <button type="button" id="sidebarCollapse" (click)="sidebarCollapseClick()" class="btn btn-info navbar-btn">
+            <i class="glyphicon glyphicon-align-left"></i>
+            <span>Toggle Sidebar</span>
+          </button>
+        </div>
+
+      </div>
+    </nav>
+
+    <router-outlet></router-outlet>
+  </div>
 </div>
+
+
+
