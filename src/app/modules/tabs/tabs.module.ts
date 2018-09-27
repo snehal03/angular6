@@ -2,25 +2,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 /** User Defined imports */
-import { LoaderComponent  } from './loader.component';
-import {LoaderRoutingModule} from './loader-routing.module';
-import { NgxSpinnerModule } from 'ngx-spinner';
+import { TabsComponent  } from './tabs.component';
+import {TabsRoutingModule} from './tabs-routing.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    LoaderRoutingModule,
-    NgxSpinnerModule
+    TabsRoutingModule,
+    NgbModule
   ],
-  declarations: [LoaderComponent],
+  declarations: [TabsComponent],
   providers: []
 })
 
 /**
  * @author - Snehal Dhane
- * Loader Module
+ * Tabs Module
  */
-export class LoaderModule { }
+export class TabsModule { }

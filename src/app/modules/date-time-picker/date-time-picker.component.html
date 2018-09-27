@@ -1,0 +1,169 @@
+<!-- Date Picker -->
+Datepicker:
+<form class="form-inline">
+  <div class="form-group">
+    <div class="input-group">
+      <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker #d="ngbDatepicker" [(ngModel)]="model">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+      </div>
+    </div>
+  </div>
+</form>
+<pre>Model: {{ model | json }}</pre>
+<!-- Date Picker End -->
+
+<hr/>
+
+<!-- Multiple months Date Picker -->
+Multiple months:
+<form class="form-inline">
+  <div class="form-group">
+    <div class="input-group">
+      <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [displayMonths]="displayMonths" [navigation]="navigation"
+        [outsideDays]="outsideDays" [showWeekNumbers]="showWeekNumbers" ngbDatepicker #d1="ngbDatepicker">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary calendar" (click)="d1.toggle()" type="button"></button>
+      </div>
+    </div>
+  </div>
+</form>
+<hr/>
+<!-- Multiple months Date Picker end -->
+
+
+<!-- Range Date Picker -->
+<p>Example of the range selection</p>
+<div class="col" style="height: 38px;">
+
+  <!-- <style>
+    .datePicketInput .btn-outline-secondary {
+      background: #fff;
+    }
+
+    .datePicketInput .btn-outline-secondary:hover {
+      background-color: #868e96;
+
+    }
+
+    .datePicketInput input[type="text"] {
+      color: #000 !important;
+      font-weight: 500;
+    }
+
+    .datePicketInput input[type="text"]::-webkit-input-placeholder {
+      color: #000 !important;
+      font-weight: 500;
+    }
+
+    .datePicketInput input[type="text"]:-moz-placeholder {
+      /* Firefox 18- */
+      color: #000 !important;
+      font-weight: 500;
+    }
+
+    .datePicketInput input[type="text"]::placeholder {
+      color: #000 !important;
+      font-weight: 500;
+    }
+
+  </style> -->
+  <form>
+    <div class="form-group">
+      <div class="input-group datePicketInput">
+        <input type="text" class="form-control font-small-3 text-ellipsis" [(ngModel)]="dateSelected" readonly placeholder="Select Date Range"
+          name="dp" style="background-color: #ffffff" #dp>
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" style="z-index:0;" (click)="dateToggle = !dateToggle" type="button">
+            <i class="fa fa-calendar" style="cursor: pointer;"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </form>
+  <style>
+    .custom-day {
+      text-align: center;
+      padding: 0.185rem 0.25rem;
+      display: inline-block;
+      height: 2rem;
+      width: 2rem;
+    }
+
+    .custom-day.focused {
+      background-color: #e6e6e6;
+    }
+
+    .custom-day.range,
+    .custom-day:hover {
+      background-color: rgb(2, 117, 216);
+      color: white;
+    }
+
+    .custom-day.faded {
+      background-color: rgba(2, 117, 216, 0.5);
+    }
+  </style>
+  <div style="position: relative;z-index:1000">
+    <div [ngClass]="{'d-none':!dateToggle}" style="position: absolute;right:0px;    background: #fff;">
+      <ngb-datepicker #dp1 ngModel (ngModelChange)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t">
+      </ngb-datepicker>
+      <ng-template #t let-date="date" let-focused="focused">
+        <!-- isFrom(date) || isTo(date) ||  -->
+        <span class="custom-day" [class.focused]="focused" [class.range]=" isInside(date) || isHovered(date)" [class.faded]="isHovered(date) || isInside(date)"
+          (mouseenter)="hoveredDate = date" (mouseleave)="hoveredDate = null">
+          {{ date.day }}
+        </span>
+      </ng-template>
+    </div>
+  </div>
+
+</div>
+<hr>
+
+<pre>From: {{ fromDate | json }} </pre>
+<pre>To: {{ toDate | json }} </pre>
+
+<!-- Range Date Picker End -->
+
+
+<!-- TImePicker-->
+<ngb-timepicker [(ngModel)]="time"></ngb-timepicker>
+<hr>
+<pre>Selected time: {{time | json}}</pre>
+<!-- TImePicker End-->
+
+
+<!--  Meridian TImePicker-->
+Meridian
+<ngb-timepicker [(ngModel)]="meridianTime" [meridian]="meridian"></ngb-timepicker>
+<button class="btn btn-sm btn-outline-{{meridian ? 'success' : 'danger'}}" (click)="toggleMeridian()">
+  Meridian - {{meridian ? "ON" : "OFF"}}
+</button>
+<hr>
+<pre>Selected time: {{meridianTime | json}}</pre>
+<!--  Meridian TImePicker end-->
+
+
+<!--  Seconds TImePicker-->
+Seconds
+<ngb-timepicker [(ngModel)]="secondsTime" [seconds]="seconds"></ngb-timepicker>
+<button class="btn btn-sm btn-outline-{{seconds ? 'success' : 'danger'}}" (click)="toggleSeconds()">
+  Seconds - {{seconds ? "ON" : "OFF"}}
+</button>
+<hr>
+<pre>Selected time: {{secondsTime | json}}</pre>
+<!--  Seconds TImePicker end-->
+
+
+<!--  Spinners TImePicker-->
+Spinners
+<ngb-timepicker [(ngModel)]="spinnersTime" [spinners]="spinners"></ngb-timepicker>
+
+<hr/>
+
+<button class="m-t-1 btn btn-sm btn-outline-{{spinners ? 'success' : 'danger'}}" (click)="toggleSpinners()">
+  Spinners - {{spinners ? "ON" : "OFF"}}
+</button>
+<!--  Spinners TImePicker end-->

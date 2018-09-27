@@ -10,7 +10,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppHttpInterceptor } from './shared/commons/appHttpInterceptor';
 import { ToastMessagesComponent } from './shared/modules/toaster/toast.component';
 import { ToastService } from './shared/modules/toaster/toast.service';
-
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -28,11 +28,13 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
   ],
   imports: [
+    NgxSpinnerModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule.forRoot(),
     HttpClientModule,
     StoreDevtoolsModule.instrument({ maxAge: 50 })
+
   ],
   providers: [
     ToastService,
