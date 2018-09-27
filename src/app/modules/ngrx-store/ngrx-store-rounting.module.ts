@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 /** Component Imports */
 
 import { UseStoreComponent } from './use-store/use-store.component';
+import { GenerateStoreComponent } from './generate-store/generate-store.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
       {
         path: 'useStore',
         component: UseStoreComponent
+      },
+      {
+        path: 'generateStore',
+        component: GenerateStoreComponent
       }
     ]
   }
