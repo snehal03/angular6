@@ -12,7 +12,7 @@ declare var $;
   styleUrls: ["./full-layout.component.css"]
 })
 export class FullLayoutComponent implements OnInit {
-
+public hidetoggle = true;
   // for large icons icon = '"fa fa-dashboard fa-lg fa-fw sidebar-icon'
   public menuItems = [
     {
@@ -132,5 +132,12 @@ export class FullLayoutComponent implements OnInit {
     $('#sidebar, #content').toggleClass('active');
     $('.collapse.in').toggleClass('in');
     $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+    // this.hidetoggle =  !this.hidetoggle;
+    // if($('.collapse.in').toggleClass('in')){
+    //   this.hidetoggle = true;
+    // }
+    // else{
+    //   this.hidetoggle = false;
+    // }
   }
 }

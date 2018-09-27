@@ -38,7 +38,10 @@
   <!-- Sidebar Holder -->
   <nav id="sidebar">
     <div class="sidebar-header">
-      <h3>Logo</h3>
+      <h3>Logo  <button type="button" id="sidebarCollapse" (click)="sidebarCollapseClick()" class="btn btn-info navbar-btn">
+        <i class="fa fa-bars"></i>            
+      </button></h3>
+     
     </div>
 
     <ul class="list-unstyled components">
@@ -70,10 +73,9 @@
     <nav class="navbar navbar-default">
       <div class="container-fluid">
 
-        <div class="navbar-header">
+        <div class="navbar-header" *ngIf="!hidetoggle">
           <button type="button" id="sidebarCollapse" (click)="sidebarCollapseClick()" class="btn btn-info navbar-btn">
-            <i class="glyphicon glyphicon-align-left"></i>
-            <span>Toggle Sidebar</span>
+            <i class="fa fa-bars"></i>            
           </button>
         </div>
 
