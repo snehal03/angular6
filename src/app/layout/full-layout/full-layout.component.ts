@@ -123,16 +123,16 @@ public hidetoggle = true;
 
   ngOnInit() {
 
-      $("#sidebar").mCustomScrollbar({
-        theme: "minimal"
-      });
+      // $("#sidebar").mCustomScrollbar({
+      //   theme: "minimal"
+      // });
   }
 
   sidebarCollapseClick(){
     $('#sidebar, #content').toggleClass('active');
     $('.collapse.in').toggleClass('in');
     $('a[aria-expanded=true]').attr('aria-expanded', 'false');
-    // this.hidetoggle =  !this.hidetoggle;
+    this.hidetoggle =  !this.hidetoggle;
     // if($('.collapse.in').toggleClass('in')){
     //   this.hidetoggle = true;
     // }
