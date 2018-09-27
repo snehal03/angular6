@@ -1,15 +1,25 @@
-
-Google Map
+ Google Map
 <style>
-    agm-map {
-      height: 600px;
-    }
+  agm-map {
+    height: 600px;
+  }
 
-    .block {
-      display: block;
-    }
+  .block {
+    display: block;
+  }
+</style>
+<!-- [hidden]="submitted" -->
+<div >
+    <!-- (ngSubmit)="onSubmit()" -->
+  <form  #locForm="ngForm">
+    <div class="form-group">
+      <input type="text" class="form-control" id="locInput" name="locInput"  #search
+      [(ngModel)]="searchControl"
+        required>
+    </div>
+  </form>
+</div>
 
-  </style>
 <agm-map #AgmMap [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
-  <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+  <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true" (dragEnd)="markerDragEnd($event)"></agm-marker>
 </agm-map>
