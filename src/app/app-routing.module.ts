@@ -1,11 +1,11 @@
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import { FullLayoutComponent } from "./layout/full-layout/full-layout.component";
-import { AppComponent } from "./app.component";
-import { PartialLayoutComponent } from "./layout/partial-layout/partial-layout.component";
-import { Full_ROUTES } from "./shared/routes/full-layout.routes";
-import { PARTIAL_ROUTES } from "./shared/routes/partial-layout.routes.";
+import { FullLayoutComponent } from './layout/full-layout/full-layout.component';
+import { AppComponent } from './app.component';
+import { PartialLayoutComponent } from './layout/partial-layout/partial-layout.component';
+import { Full_ROUTES } from './shared/routes/full-layout.routes';
+import { PARTIAL_ROUTES } from './shared/routes/partial-layout.routes.';
 import { AuthGuard } from './shared/auth/auth-guard.service';
 
 /**
@@ -16,28 +16,28 @@ import { AuthGuard } from './shared/auth/auth-guard.service';
  */
 const appRoutes: Routes = [
   {
-    path: "",
-    redirectTo: "/home",
-    pathMatch: "full"
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
   },
   {
-    path: "home",
+    path: 'home',
     component: AppComponent
   },
   {
-    path: "",
+    path: '',
     component: FullLayoutComponent,
     data: {
-      title: "full Views"
+      title: 'full Views'
     },
     children: Full_ROUTES,
     canActivate: [AuthGuard]
   },
   {
-    path: "",
+    path: '',
     component: PartialLayoutComponent,
     data: {
-      title: "partial Views"
+      title: 'partial Views'
     },
     children: PARTIAL_ROUTES,
   }

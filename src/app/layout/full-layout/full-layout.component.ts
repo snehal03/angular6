@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import { Router, ActivatedRoute } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 declare var $;
 
 /**
@@ -7,115 +7,134 @@ declare var $;
  * Full Layout component
  */
 @Component({
-  selector: "app-full-layout",
-  templateUrl: "./full-layout.component.html",
-  styleUrls: ["./full-layout.component.css"]
+  selector: 'app-full-layout',
+  templateUrl: './full-layout.component.html',
+  styleUrls: ['./full-layout.component.css']
 })
 export class FullLayoutComponent implements OnInit {
 public hidetoggle = true;
-  // for large icons icon = '"fa fa-dashboard fa-lg fa-fw sidebar-icon'
+  // for large icons icon = ''fa fa-dashboard fa-lg fa-fw sidebar-icon'
   public menuItems = [
     {
-      displayName: "Dashboard",
-      link: "/#",
+      displayName: 'Dashboard',
+      link: '/#',
       submenu: [],
-      icon: "fa fa-tachometer"
+      icon: 'fa fa-tachometer'
     },
     {
-      displayName: "Buttons",
-      link: "/button",
+      displayName: 'Buttons',
+      link: '/button',
       submenu: [],
-      icon: "fa fa-dashboard"
+      icon: 'fa fa-dashboard'
     },
     {
-      displayName: "Form",
-      link: "/form",
+      displayName: 'Form',
+      link: '/form',
       submenu: [
         {
-          displayName: "Reactive",
-          link: "/reactive",
+          displayName: 'Reactive',
+          link: '/reactive',
           submenu: [],
-          icon: "fa fa-dashboard"
+          icon: 'fa fa-dashboard'
         },
         {
-          displayName: "Template Driven",
-          link: "/templateDriven",
+          displayName: 'Template Driven',
+          link: '/templateDriven',
           submenu: [],
-          icon: "fa fa-dashboard"
+          icon: 'fa fa-dashboard'
         }
       ],
-      icon: "fa fa-dashboard"
+      icon: 'fa fa-dashboard'
     },
     {
-      displayName: "Color Picker",
-      link: "/colorPicker",
+      displayName: 'Color Picker',
+      link: '/colorPicker',
       submenu: [],
-      icon: "fa fa-dashboard"
+      icon: 'fa fa-dashboard'
     },
     {
-      displayName: "Date Time Picker",
-      link: "/dateTime",
+      displayName: 'Date Time Picker',
+      link: '/dateTime',
       submenu: [],
-      icon: "fa fa-calendar"
+      icon: 'fa fa-calendar'
     },
     {
-      displayName: "File Download",
-      link: "/fileDownload",
+      displayName: 'File Download',
+      link: '/fileDownload',
       submenu: [],
-      icon: "fa fa-download "
+      icon: 'fa fa-download '
     },
     {
-      displayName: "File Upload",
-      link: "/fileUpload",
+      displayName: 'File Upload',
+      link: '/fileUpload',
       submenu: [],
-      icon: "fa fa fa-upload"
+      icon: 'fa fa fa-upload'
     },
     {
-      displayName: "Injectable Service",
-      link: "/injectableService",
+      displayName: 'Injectable Service',
+      link: '/injectableService',
       submenu: [],
-      icon: "fa fa-server"
+      icon: 'fa fa-server'
     },
     {
-      displayName: "Modal",
-      link: "/modal",
+      displayName: 'Modal',
+      link: '/modal',
       submenu: [],
-      icon: "fa fa-square"
+      icon: 'fa fa-square'
     }, {
-      displayName: "Filter Pipe",
-      link: "/filterPipe",
+      displayName: 'Filter Pipe',
+      link: '/filterPipe',
       submenu: [],
-      icon: "fa fa-filter "
+      icon: 'fa fa-filter '
     },
     {
-      displayName: "Tables",
-      link: "/tables",
+      displayName: 'Tables',
+      link: '/tables',
       submenu: [],
-      icon: "fa fa-table"
+      icon: 'fa fa-table'
     },
     {
-      displayName: "Loader",
-      link: "/loader",
+      displayName: 'Loader',
+      link: '/loader',
       submenu: [],
-      icon: "fa fa-spinner"
+      icon: 'fa fa-spinner'
     },
     {
-      displayName: "Toaster",
-      link: "/toaster",
+      displayName: 'Toaster',
+      link: '/toaster',
       submenu: [],
-      icon: "fa fa-flag"
+      icon: 'fa fa-flag'
     },
     {
-      displayName: "Select Search",
-      link: "/selectSearch",
+      displayName: 'Select Search',
+      link: '/selectSearch',
       submenu: [],
-      icon: "fa fa-search"
+      icon: 'fa fa-search'
     },
     {
-      displayName: "Tabs",
-      link: "/tabs",
+      displayName: 'Tabs',
+      link: '/tabs',
       submenu: [],
-      icon: "fa fa-dashboard"
+      icon: 'fa fa-dashboard'
+    },
+    {
+      displayName: 'Ngrx-Store',
+      link: '/store',
+      submenu: [
+        {
+          displayName: 'Generate Store',
+          link: '/generateStore',
+          submenu: [],
+          icon: 'fa fa-dashboard'
+        },
+        {
+          displayName: 'Use Store',
+          link: '/useStore',
+          submenu: [],
+          icon: 'fa fa-dashboard'
+        }
+      ],
+      icon: 'fa fa-dashboard'
     }
 
   ];
@@ -123,8 +142,8 @@ public hidetoggle = true;
 
   ngOnInit() {
 
-      // $("#sidebar").mCustomScrollbar({
-      //   theme: "minimal"
+      // $('#sidebar').mCustomScrollbar({
+      //   theme: 'minimal'
       // });
   }
 
