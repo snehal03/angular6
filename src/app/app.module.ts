@@ -12,6 +12,8 @@ import { ToastMessagesComponent } from './shared/modules/toaster/toast.component
 import { ToastService } from './shared/modules/toaster/toast.service';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 /**
  * @author - Snehal Dhane
  * App Module
@@ -21,7 +23,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     AppComponent,
     FullLayoutComponent,
     PartialLayoutComponent,
-    ToastMessagesComponent
+    ToastMessagesComponent,
+
 
   ],
   imports: [
@@ -30,6 +33,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     AppRoutingModule,
     NgbModule.forRoot(),
     HttpClientModule,
+    StoreDevtoolsModule.instrument({ maxAge: 50 })
 
   ],
   providers: [
