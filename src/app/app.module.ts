@@ -12,6 +12,8 @@ import { ToastMessagesComponent } from './shared/modules/toaster/toast.component
 import { ToastService } from './shared/modules/toaster/toast.service';
 
 
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 /**
  * @author - Snehal Dhane
  * App Module
@@ -21,14 +23,16 @@ import { ToastService } from './shared/modules/toaster/toast.service';
     AppComponent,
     FullLayoutComponent,
     PartialLayoutComponent,
-    ToastMessagesComponent
+    ToastMessagesComponent,
+
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    StoreDevtoolsModule.instrument({ maxAge: 50 })
   ],
   providers: [
     ToastService,

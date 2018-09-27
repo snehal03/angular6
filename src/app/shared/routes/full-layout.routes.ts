@@ -52,4 +52,8 @@ export const Full_ROUTES: Routes = [
     path: 'toaster',
     loadChildren: 'src/app/modules/my-toaster/my-toaster.module#MyToasterModule',
   },
+  {
+    path: 'store',
+    loadChildren: 'src/app/modules/ngrx-store/ngrx-store.module#NgrxStoreModule',
+  }
 ];

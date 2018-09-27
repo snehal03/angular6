@@ -1,0 +1,24 @@
+[
+  {
+    "firstName":"komal","lastName":"Sharma",
+    "email":"ckomal@agsft.com",
+    "address":"Warje-Bridge",
+    "city":"Pune",
+    "country":"India"
+  },
+  {
+    "firstName":"Kajal","lastName":"Kharade",
+    "email":"kajal@gmail.com",
+    "address":"Karve-Road",
+    "city":"Pune",
+    "country":"India"
+  }
+  ,
+  {
+    "firstName":"Kamal","lastName":"Singh",
+    "email":"kamal@gmail.com",
+    "address":"Kothrud",
+    "city":"Pune",
+    "country":"India"
+  }
+]
