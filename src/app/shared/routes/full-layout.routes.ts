@@ -76,5 +76,9 @@ export const Full_ROUTES: Routes = [
   {
     path: 'tabs',
     loadChildren: 'src/app/modules/tabs/tabs.module#TabsModule'
-  }
+  },
+  {
+    path: 'googleMap',
+    loadChildren: 'src/app/modules/google-map/google-map.module#GoogleMapModule'
+  },
 ];

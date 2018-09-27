@@ -135,6 +135,12 @@ public hidetoggle = true;
         }
       ],
       icon: 'fa fa-dashboard'
+    },
+    {
+      displayName: 'Google Map',
+      link: '/googleMap',
+      submenu: [],
+      icon: 'fa fa-map'
     }
 
   ];
