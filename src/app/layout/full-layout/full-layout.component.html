@@ -1,46 +1,17 @@
-<!-- <div class="nav-side-menu">
-  <div class="brand">Brand Logo</div>
-  <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
-
-  <div class="menu-list">
-
-    <ul id="menu-content" class="menu-content collapse out" *ngFor="let menu of menuItems">
-      <li *ngIf="!menu.submenu || (menu.submenu && menu.submenu.length==0)">
-        <a  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"  [routerLink]="[menu.link]">
-          <i [ngClass]="menu.icon"></i> {{menu.displayName}}</a>
-      </li>
-      <li *ngIf="menu.submenu && menu.submenu.length !==0" data-toggle="collapse" data-target="#manage" class="collapsed">
-        <a>
-          <i [ngClass]="menu.icon"></i> {{menu.displayName}}
-          <span class="arrow"></span>
-        </a>
-      </li>
-      <ul *ngIf="menu.submenu && menu.submenu.length !==0" class="sub-menu collapse" id="manage">
-        <li *ngFor="let submenu of menu.submenu">
-          <a  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"  [routerLink]="[menu.link+submenu.link]">
-            <i [ngClass]="submenu.icon"></i> {{submenu.displayName}}</a>
-        </li>
-      </ul>
-
-    </ul>
-  </div>
-</div>
-
-<div class="main">
-  <router-outlet></router-outlet>
-</div> -->
-
-
-
-
-
 <div class="wrapper">
+  
   <!-- Sidebar Holder -->
   <nav id="sidebar">
     <div class="sidebar-header">
-      <h3>Logo  <button type="button" id="sidebarCollapse" (click)="sidebarCollapseClick()" class="btn btn-info navbar-btn">
+      
+      <h3>
+        <!-- image logo -->
+        <img src="assets/images/logo.png" style="width:42px;height:37px" alt="logo">
+
+          <button type="button" id="sidebarCollapse" (click)="sidebarCollapseClick()" class="btn btn-info navbar-btn">
         <i class="fa fa-bars"></i>
-      </button></h3>
+      </button>
+    </h3>
 
     </div>
 
@@ -69,22 +40,37 @@
 
   <!-- Page Content Holder -->
   <div id="content">
-
-    <!-- <nav class="navbar navbar-default" > -->
-      <!-- <div class="container-fluid"> -->
-
-        <div class="navbar-header"  *ngIf="!hidetoggle">
-          <button type="button" id="sidebarCollapse" (click)="sidebarCollapseClick()" class="btn btn-info navbar-btn">
-            <i class="fa fa-bars"></i>
-          </button>
-        </div>
-
-      <!-- </div> -->
-    <!-- </nav> -->
-
     <router-outlet></router-outlet>
   </div>
 </div>
 
 
 
+
+
+
+<!-- navbar right-->
+
+<nav class="navbar navbar-expand navbar-light bg-light">
+  <ul class="navbar-nav ">
+    <!-- Dropdown -->
+     <div class="navbar-header" >
+          <button type="button" id="sidebarCollapse" (click)="sidebarCollapseClick()" class="btn btn-info">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+        
+        <div class="ml-auto">
+    <li class="nav-item dropdown ">
+      <a class="nav-link dropdown-toggle " style="padding-right: 30px;" href="#" id="navbardrop" data-toggle="dropdown">
+        Dropdown link
+      </a>
+      <div class="dropdown-menu" style="left:-15px;">
+        <a class="dropdown-item" href="#"><i class="fa fa-cog" style="padding-right:15px;"></i>Setting</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#"><i class="fa fa-sign-out" style="color: red;padding-right:15px;"></i>Log Out</a>
+      </div>
+    </li>
+    </div>
+  </ul>
+</nav>
