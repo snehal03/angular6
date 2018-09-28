@@ -59,7 +59,7 @@ a, a:hover, a:focus {
     color: #fff;
     transition: all 0.3s;
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 #sidebar.active {
@@ -156,6 +156,31 @@ a.article, a.article:hover {
 #content.active {
     width: 100%;
 }
+
+
+/* color picker page */
+.bg-light{
+    background-color: #6d7ecc!important;
+    display: block;
+}
+.navbar-light .navbar-nav .nav-link{
+    color: white;
+}
+.navbar[_ngcontent-c2]{
+    padding: 5px 10px;
+}
+#sidebar[_ngcontent-c2] .sidebar-header[_ngcontent-c2]{
+    padding: 1px 23px;
+    background: #6d7fcc;
+    padding-top: 4px;
+}
+#sidebar[_ngcontent-c2]{
+    background: #4c567d;
+}
+.navbar-btn[_ngcontent-c2]{
+    margin-left: 50px;
+}
+
 
 
 /* ---------------------------------------------------
