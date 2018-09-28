@@ -14,6 +14,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import {changeNavState} from './modules/ngrx-store/stateManager/stateMgr';
+
 /**
  * @author - Snehal Dhane
  * App Module
@@ -31,8 +33,11 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     NgxSpinnerModule,
     BrowserModule,
     AppRoutingModule,
+
     NgbModule.forRoot(),
     HttpClientModule,
+    StoreModule.forRoot(
+      { changeNavState: changeNavState}),
     StoreDevtoolsModule.instrument({ maxAge: 50 })
 
   ],

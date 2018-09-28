@@ -8,6 +8,7 @@ import { GetUserService } from '../../services/getUser.service';
 /** User Defined imports */
 
 import {  UseStoreComponent } from './use-store/use-store.component';
+import { GenerateStoreComponent } from './generate-store/generate-store.component';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import {  UseStoreComponent } from './use-store/use-store.component';
     ReactiveFormsModule,
     NgrxStoreRoutingModule
   ],
-  declarations: [UseStoreComponent],
+  declarations: [UseStoreComponent, GenerateStoreComponent],
   providers: []
 })
 

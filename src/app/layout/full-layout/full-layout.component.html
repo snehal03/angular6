@@ -21,11 +21,11 @@
               <a *ngIf="!menu.submenu || (menu.submenu && menu.submenu.length==0)"  [routerLink]="[menu.link]">
                       <i [ngClass]="menu.icon"></i> {{menu.displayName}}
               </a>
-              <a *ngIf="menu.submenu && menu.submenu.length !==0" href="#submenu" data-toggle="collapse" aria-expanded="false">
+              <a *ngIf="menu.submenu && menu.submenu.length !==0" [href]="'#submenu_'+menu.displayName" data-toggle="collapse" aria-expanded="false">
                   <i [ngClass]="menu.icon"></i> {{menu.displayName}}
                   <span class="arrow"></span>
               </a>
-              <ul class="collapse list-unstyled" id="submenu" *ngIf="menu.submenu && menu.submenu.length !==0">
+              <ul class="collapse list-unstyled" [attr.id]="'submenu_'+menu.displayName" *ngIf="menu.submenu && menu.submenu.length !==0">
                   <li *ngFor="let submenu of menu.submenu">
                       <a routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [routerLink]="[menu.link+submenu.link]">
                           <i [ngClass]="submenu.icon"></i> {{submenu.displayName}}</a>
