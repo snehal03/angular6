@@ -1,73 +1,90 @@
-
-<div class="container">
-    <div class="row">
-      <div class="col-md-6 offset-md-3" style="margin-top: 50px">
-        <div>
-          <h3>File Download</h3>
-          <!-- (ngSubmit)="fileDownloadForm.form.valid && onSubmit()" -->
-          <form  #fileDownloadForm="ngForm" novalidate>
-
-            <div class="form-group">
-              <label for="alterEgo">Url</label>
-
-              <input type="text" class="form-control" id="alterEgo" required [(ngModel)]="fileurlModel" name="fileurl" #fileurl="ngModel"
-                [ngClass]="{ 'is-invalid': fileurl.invalid && (fileurl.dirty || fileurl.touched) }" >
-                <div *ngIf="fileurl.invalid && (fileurl.dirty || fileurl.touched)" class="invalid-feedback">
-                    <div *ngIf="fileurl?.errors?.required">{{msgs.required}}</div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="alterEgo"> Method Type </label>
-                <select name="methodType" class="form-control" [(ngModel)]="methodTypeModel" style="width:100%;" required #methodType="ngModel"
-                  [ngClass]="{ 'is-invalid': methodType.invalid && (methodType.dirty || methodType.touched) }">
-                  <option [value]="'GET'">GET </option>
-                  <option [value]="'POST'"> POST </option>
-                  <option [value]="'PUT'"> PUT</option>
-                </select>
-                <div *ngIf="methodType.invalid && (methodType.dirty || methodType.touched)" class="invalid-feedback">
-                  <div *ngIf="methodType?.errors?.required">{{msgs.required}}</div>
-                </div>
-              </div>
-
-              <div class="form-group">
-                  <label for="alterEgo"> Body </label>
-                  <input type="text" class="form-control" id="apiBody" [required]="methodTypeModel!='GET'" [(ngModel)]="apiBodyModel" name="apiBody" #apiBody="ngModel"
-                  [ngClass]="{ 'is-invalid': apiBody.invalid && (apiBody.dirty || apiBody.touched) }" >
-                  <div *ngIf="apiBody.invalid && (apiBody.dirty || apiBody.touched)" class="invalid-feedback">
-                      <div *ngIf="apiBody?.errors?.required">{{msgs.required}}</div>
+<div class="header">
+  <h2> File Download</h2>
+</div>
+<div class="row">
+    <div class="col-md-12">
+          <div class="card">
+                  <div class="card-header">
+                    <h3>File Download</h3>
+                  </div>
+                  <div class="card-body">
+                      <div class="container">
+                          <div class="row">
+                            <div class="col-md-6 offset-md-3" style="margin-top: 50px">
+                              <div class="form-details"> 
+                                 <!-- <h3>File Download</h3> 
+                                 <hr/> -->
+                                 <!-- (ngSubmit)="fileDownloadForm.form.valid && onSubmit()" -->
+                                <form  #fileDownloadForm="ngForm" novalidate>
+                      
+                                  <div class="form-group">
+                                    <label for="alterEgo">Url :</label>
+                      
+                                    <input type="text" class="form-control" id="alterEgo" required [(ngModel)]="fileurlModel" name="fileurl" #fileurl="ngModel"
+                                      [ngClass]="{ 'is-invalid': fileurl.invalid && (fileurl.dirty || fileurl.touched) }" >
+                                      <div *ngIf="fileurl.invalid && (fileurl.dirty || fileurl.touched)" class="invalid-feedback">
+                                          <div *ngIf="fileurl?.errors?.required">{{msgs.required}}</div>
+                                      </div>
+                                  </div>
+                      
+                                  <div class="form-group">
+                                      <label for="alterEgo"> Method Type : </label>
+                                      <select name="methodType" class="form-control" [(ngModel)]="methodTypeModel" style="width:100%;" required #methodType="ngModel"
+                                        [ngClass]="{ 'is-invalid': methodType.invalid && (methodType.dirty || methodType.touched) }">
+                                        <option [value]="'GET'">GET </option>
+                                        <option [value]="'POST'"> POST </option>
+                                        <option [value]="'PUT'"> PUT</option>
+                                      </select>
+                                      <div *ngIf="methodType.invalid && (methodType.dirty || methodType.touched)" class="invalid-feedback">
+                                        <div *ngIf="methodType?.errors?.required">{{msgs.required}}</div>
+                                      </div>
+                                    </div>
+                      
+                                    <div class="form-group">
+                                        <label for="alterEgo"> Body : </label>
+                                        <input type="text" class="form-control" id="apiBody" [required]="methodTypeModel!='GET'" [(ngModel)]="apiBodyModel" name="apiBody" #apiBody="ngModel"
+                                        [ngClass]="{ 'is-invalid': apiBody.invalid && (apiBody.dirty || apiBody.touched) }" >
+                                        <div *ngIf="apiBody.invalid && (apiBody.dirty || apiBody.touched)" class="invalid-feedback">
+                                            <div *ngIf="apiBody?.errors?.required">{{msgs.required}}</div>
+                                        </div>
+                                      </div>
+                      
+                                  <div class="form-group">
+                                    <label for="alterEgo"> File Type : </label>
+                                    <select name="filetype" class="form-control" [(ngModel)]="file_typeModel" style="width:100%;" required #filetype="ngModel"
+                                      [ngClass]="{ 'is-invalid': filetype.invalid && (filetype.dirty || filetype.touched) }">
+                                      <option [value]="'CSV'">CSV </option>
+                                      <option [value]="'PDF'"> PDF </option>
+                                      <option [value]="'XLS'"> XLS</option>
+                                    </select>
+                                    <div *ngIf="filetype.invalid && (filetype.dirty || filetype.touched)" class="invalid-feedback">
+                                      <div *ngIf="filetype?.errors?.required">{{msgs.required}}</div>
+                                    </div>
+                                  </div> 
+                      
+                      
+                                    <div class="form-group">
+                                      <label for="alterEgo">MIME Type :</label>
+                                      <input type="text" class="form-control" id="alterEgo" required [(ngModel)]="mimetypeModel" name="mimetype" #mimetype="ngModel"
+                                        [ngClass]="{ 'is-invalid': mimetype.invalid && (mimetype.dirty || mimetype.touched) }" >
+                                        <div *ngIf="mimetype.invalid && (mimetype.dirty || mimetype.touched)" class="invalid-feedback">
+                                            <div *ngIf="mimetype?.errors?.required">{{msgs.required}}</div>
+                                         </div>
+                                  </div>  
+                      
+                                   <!-- <button fileDownload [methodType]="methodTypeModel" [url]="fileurlModel" [fileType]="file_typeModel"
+                                   [apiBody]="apiBodyModel" [token]="token"  >Download </button>  -->
+                      
+                                  <button type="submit" class="btn btn-success" [disabled]="!fileDownloadForm.form.valid">Download</button>
+                                 </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div> 
+                      
                   </div>
                 </div>
-
-            <div class="form-group">
-              <label for="alterEgo"> File Type </label>
-              <select name="filetype" class="form-control" [(ngModel)]="file_typeModel" style="width:100%;" required #filetype="ngModel"
-                [ngClass]="{ 'is-invalid': filetype.invalid && (filetype.dirty || filetype.touched) }">
-                <option [value]="'CSV'">CSV </option>
-                <option [value]="'PDF'"> PDF </option>
-                <option [value]="'XLS'"> XLS</option>
-              </select>
-              <div *ngIf="filetype.invalid && (filetype.dirty || filetype.touched)" class="invalid-feedback">
-                <div *ngIf="filetype?.errors?.required">{{msgs.required}}</div>
-              </div>
-            </div>
-
-
-            <!-- <div class="form-group">
-                <label for="alterEgo">MIME Type</label>
-                <input type="text" class="form-control" id="alterEgo" required [(ngModel)]="mimetypeModel" name="mimetype" #mimetype="ngModel"
-                  [ngClass]="{ 'is-invalid': mimetype.invalid && (mimetype.dirty || mimetype.touched) }" >
-                  <div *ngIf="mimetype.invalid && (mimetype.dirty || mimetype.touched)" class="invalid-feedback">
-                      <div *ngIf="mimetype?.errors?.required">{{msgs.required}}</div>
-                   </div>
-            </div> -->
-
-            <button fileDownload [methodType]="methodTypeModel" [url]="fileurlModel" [fileType]="file_typeModel"
-             [apiBody]="apiBodyModel" [token]="token"  >Download </button>
-
-            <!-- <button type="submit" class="btn btn-success" [disabled]="!fileDownloadForm.form.valid">Download</button> -->
-          </form>
-        </div>
-      </div>
     </div>
-  </div>
+</div>
+
+

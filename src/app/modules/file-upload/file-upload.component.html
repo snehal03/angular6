@@ -1,12 +1,27 @@
-<div class="form-group row pt-2">
-  <label class="col-md-4 label-control wizard-text label-vertical-center" for="userinput1">Single file select:
-    <span class="red">*</span>
-  </label>
-  <div class="col-md-8">
-    <label for="file-upload label-vertical-center" class="custom-file-upload" (click)="fileInput.click()" style="color: #fff !important">
-      Select or Upload
-    </label>
-    <input id="file-upload" class="btn text-left file-upload" #fileInput type="file" name="file" ngModel (change)="getFiles($event)"
-      #image="ngModel" />
-  </div>
+<div class="header">
+  <h2>File Upload</h2>
 </div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h3>Select File</h3>
+      </div>
+      <div class="card-body">
+
+        <div class="form-group">
+          <label class="col-md-6 label-control wizard-text label-vertical-left select-align" for="userinput1">Select or Upload :
+            <span class="red">*</span>
+          </label>
+          <div class="col-md-6">
+            <label for="file-upload label-vertical-center" class="custom-file-upload" (click)="fileInput.click()" style="color: #fff !important">
+              Select or Upload
+            </label>
+            <input id="file-upload" class="btn text-right file-upload btn-align" #fileInput type="file" name="file" ngModel (change)="getFiles($event)"
+              #image="ngModel" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>

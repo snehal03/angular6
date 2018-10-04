@@ -1,19 +1,28 @@
 .f-head h2{
     font-size:25px;
+      
 }
-.first{
-    margin-left: 20px !important;
-    margin-bottom: 20px !important;
-}
-.abc{
+
+ .abc{
     margin-left: 15px !important;
-}
+} 
 .button-size{
     margin-bottom: 20px !important;
 }
-
+.buttons h2 {
+    margin-top: 40px;
+}
+.size-button{
+    margin-left: 15px !important;
+}
 
 .card{
     box-shadow: 0 6px 0 0 rgba(0,0,0,.01), 0 15px 32px 0 rgba(0,0,0,.06);
     margin-bottom: 50px;
  }
+
+ .button-round {
+     border-radius: 8px;
+ }
+
+

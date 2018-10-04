@@ -1,0 +1,23 @@
+.header h2{
+    font-size: 25px;
+    margin-top: 40px;
+ }
+ .card{
+    box-shadow: 0 6px 0 0 rgba(0,0,0,.01), 0 15px 32px 0 rgba(0,0,0,.06);
+    margin-bottom: 50px;
+   margin-top: 10px;
+ }
+
+.card-header h3{
+    font-size: 20px;
+}
+  .btn-align{
+      position:absolute;
+      top:-17% !important;
+      left:3% !important;
+
+}  
+
+.select-align{
+    padding-left: 25px !important;
+}
