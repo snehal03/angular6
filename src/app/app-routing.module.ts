@@ -18,12 +18,8 @@ import { HomeComponent } from './modules/home/home.component';
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '',
     pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    component: HomeComponent
   },
   {
     path: '',

@@ -11,5 +11,9 @@ export const PARTIAL_ROUTES: Routes = [
     // loadChildren: '../../modules/login/login.module#LoginModule',
     loadChildren: 'src/app/modules/login/login.module#LoginModule',
   },
+  {
+    path: 'home',
+    loadChildren: 'src/app/modules/home/home.module#HomeModule',
+  },
 
 ];
