@@ -1,0 +1,15 @@
+.prim-header h2{
+    font-size: 25px;
+    margin-top: 40px;
+}
+ .card{
+    box-shadow: 0 6px 0 0 rgba(0,0,0,.01), 0 15px 32px 0 rgba(0,0,0,.06);
+ 
+ }
+ .card-body{
+        margin-top:-40px;
+}
+
+.card-header h3{
+    font-size: 20px;
+}
