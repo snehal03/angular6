@@ -7,6 +7,7 @@ import { PartialLayoutComponent } from './layout/partial-layout/partial-layout.c
 import { Full_ROUTES } from './shared/routes/full-layout.routes';
 import { PARTIAL_ROUTES } from './shared/routes/partial-layout.routes.';
 import { AuthGuard } from './shared/auth/auth-guard.service';
+import { HomeComponent } from './modules/home/home.component';
 
 /**
  * @author - Snehal Dhane
@@ -17,12 +18,8 @@ import { AuthGuard } from './shared/auth/auth-guard.service';
 const appRoutes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
+    redirectTo: '',
     pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    component: AppComponent
   },
   {
     path: '',
