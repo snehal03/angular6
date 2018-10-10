@@ -1,19 +1,35 @@
-<ngb-tabset #tabset="ngbTabset" type="pills" [activeId]="selectedTab" (tabChange)="onTabChange($event)">
-  <ngb-tab id="firstTab" class="btnc">
-    <ng-template ngbTabTitle>
-      <strong class="font-small-3">First Tab</strong>
-    </ng-template>
-    <ng-template ngbTabContent>
-        First Tab Content
-    </ng-template>
-  </ngb-tab>
-  <ngb-tab id="secondTab" class="btnc">
-    <ng-template ngbTabTitle>
-      <strong class="font-small-3">Second Tab</strong>
-    </ng-template>
-    <ng-template ngbTabContent>
-        Second Tab content
-    </ng-template>
-  </ngb-tab>
+<div class="header">
+  <h2>Tabs</h2>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h3>Tabs</h3>
+      </div>
+      <div class="card-body">
+        <ngb-tabset #tabset="ngbTabset" type="pills" [activeId]="selectedTab" (tabChange)="onTabChange($event)">
+          <ngb-tab id="firstTab" class="btnc">
+            <ng-template ngbTabTitle>
+              <strong class="font-small-3">First Tab</strong>
+            </ng-template>
+            <ng-template ngbTabContent>
+              First Tab Content
+            </ng-template>
+          </ngb-tab>
+          <ngb-tab id="secondTab" class="btnc">
+            <ng-template ngbTabTitle>
+              <strong class="font-small-3">Second Tab</strong>
+            </ng-template>
+            <ng-template ngbTabContent>
+             <h4> Second Tab content</h4>
+            </ng-template>
+          </ngb-tab>
 
-</ngb-tabset>
+        </ngb-tabset>
+
+
+      </div>
+    </div>
+  </div>
+</div>

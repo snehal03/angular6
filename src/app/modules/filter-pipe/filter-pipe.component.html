@@ -1,129 +1,167 @@
-<div class="form-group">
-  <div class="col-md-6">
-    <input type="text" [(ngModel)]="searchText" class="form-control" placeholder="Search By Category" />
-  </div>
-</div>
-
-<div class="form-group">
-  <div class="col-md-6">
-    <input type="text" [(ngModel)]="searchText1" class="form-control" placeholder="Search By Text" />
-  </div>
-</div>
-
-<div class="col-md-12">
-  <table class="table table-responsive table-hover">
-    <tr>
-      <th>Category ID</th>
-      <th>Category</th>
-      <th>Description</th>
-    </tr>
-    <tr *ngFor="let item of records | search: searchText : 'CategoryName' | searchObjectText: searchText1 ">
-      <td>{{item.CategoryID}}</td>
-      <td>{{item.CategoryName}}</td>
-      <td>{{item.Description}}</td>
-    </tr>
-  </table>
-</div>
-
-<div class="form-group">
-  <div class="row">
-    <div class="col-md-2">
-      <label style="font-weight: 600"> Date</label>
-    </div>
-    <div class="col-md-6">
-      {{ today | date }}
-    </div>
+<div class="container">
+  <div class="prim-header" style="padding-top:40px;">
+    <h2>Filter Pipes</h2>
   </div>
 
   <div class="row">
-    <div class="col-md-2">
-      <label style="font-weight: 600">medium Date</label>
-    </div>
-    <div class="col-md-6">
-      {{ today | date:'medium' }}
+    <div class="col-md-12">
+      <div class="card" style="margin-bottom:40px;">
+        <div class="card-header">
+          <h3>Filter</h3>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <div class="col-md-12">
+              <input type="text" [(ngModel)]="searchText" class="form-control" placeholder="Search By Category" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-md-12">
+              <input type="text" [(ngModel)]="searchText1" class="form-control" placeholder="Search By Text" />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 table-responsive">
+              <table class="table  table-hover">
+                <tr>
+                  <th>Category ID</th>
+                  <th>Category</th>
+                  <th>Description</th>
+
+                </tr>
+                <tr *ngFor="let item of records | search: searchText : 'CategoryName' | searchObjectText: searchText1 ">
+                  <td>{{item.CategoryID}}</td>
+                  <td>{{item.CategoryName}}</td>
+                  <td>{{item.Description}}</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+          <div class="prim-header" style="padding-top:40px;">
+            <h2> Pipes</h2>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header">
+                  <h3>Pipes</h3>
+                </div>
+                <div class="card-body">
+
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-md-2">
+                        <label style="font-weight: 600"> Date</label>
+                      </div>
+                      <div class="col-md-6">
+                        {{ today | date }}
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-2">
+                        <label style="font-weight: 600">medium Date</label>
+                      </div>
+                      <div class="col-md-6">
+                        {{ today | date:'medium' }}
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-2">
+                        <label style="font-weight: 600">Long Date</label>
+                      </div>
+                      <div class="col-md-6">
+                        {{ today | date:'long' }}
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-2">
+                        <label style="font-weight: 600">Full Date</label>
+                      </div>
+                      <div class="col-md-6">
+                        {{ today | date:'full' }}
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-2">
+                        <label style="font-weight: 600"> shortTime</label>
+                      </div>
+                      <div class="col-md-6">
+                        {{ today| date:'shortTime' }}
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-2">
+                        <label style="font-weight: 600"> Minutes seconds</label>
+                      </div>
+                      <div class="col-md-6">
+                        {{ today | date:'mmss' }}
+                      </div>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-md-2">
+                        <label style="font-weight: 600">dd/MM/yyyy</label>
+                      </div>
+                      <div class="col-md-6">
+                        {{today | date: 'dd/MM/yyyy'}}
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-2">
+                        <label style="font-weight: 600">M/d/yy</label>
+                      </div>
+                      <div class="col-md-6">
+                        {{today | date: 'M/d/yy'}}
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-2">
+                        <label style="font-weight: 600">MMMM d, y</label>
+                      </div>
+                      <div class="col-md-6">
+                        {{today | date: 'MMMM d, y'}}
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-2">
+                        <label style="font-weight: 600">fullDate</label>
+                      </div>
+                      <div class="col-md-6">
+                        {{today | date: 'EEEE, MMMM d, y'}}
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-2">
+                        <label style="font-weight: 600">h:mm:ss a</label>
+                      </div>
+                      <div class="col-md-6">
+                        {{today | date: 'h:mm:ss a'}}
+                      </div>
+                    </div>
+
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="row">
-    <div class="col-md-2">
-      <label style="font-weight: 600">Long Date</label>
-    </div>
-    <div class="col-md-6">
-      {{ today | date:'long' }}
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-2">
-      <label style="font-weight: 600">Full Date</label>
-    </div>
-    <div class="col-md-6">
-      {{ today | date:'full' }}
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-2">
-      <label style="font-weight: 600"> shortTime</label>
-    </div>
-    <div class="col-md-6">
-      {{ today| date:'shortTime' }}
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-2">
-      <label style="font-weight: 600"> Minutes seconds</label>
-    </div>
-    <div class="col-md-6">
-      {{ today | date:'mmss' }}
-    </div>
-  </div>
-
-
-  <div class="row">
-    <div class="col-md-2">
-      <label style="font-weight: 600">dd/MM/yyyy</label>
-    </div>
-    <div class="col-md-6">
-      {{today | date: 'dd/MM/yyyy'}}
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-2">
-      <label style="font-weight: 600">M/d/yy</label>
-    </div>
-    <div class="col-md-6">
-      {{today | date: 'M/d/yy'}}
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-2">
-      <label style="font-weight: 600">MMMM d, y</label>
-    </div>
-    <div class="col-md-6">
-      {{today | date: 'MMMM d, y'}}
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-2">
-      <label style="font-weight: 600">fullDate</label>
-    </div>
-    <div class="col-md-6">
-      {{today | date: 'EEEE, MMMM d, y'}}
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-2">
-      <label style="font-weight: 600">h:mm:ss a</label>
-    </div>
-    <div class="col-md-6">
-      {{today | date: 'h:mm:ss a'}}
-    </div>
-  </div>
-
-
 </div>
