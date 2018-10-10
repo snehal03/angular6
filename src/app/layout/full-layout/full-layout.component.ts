@@ -19,38 +19,39 @@ public hidetoggle = true;
       displayName: 'Dashboard',
       link: '/#',
       submenu: [],
-      icon: 'fa fa-tachometer'
+      icon: 'fa fa-dashboard'
     },
     {
       displayName: 'Buttons',
       link: '/button',
       submenu: [],
-      icon: 'fa fa-dashboard'
+      icon: 'fa fa-bars'
     },
     {
-      displayName: 'Form',
+      displayName: 'Form',     
       link: '/form',
       submenu: [
         {
           displayName: 'Reactive',
           link: '/reactive',
           submenu: [],
-          icon: 'fa fa-dashboard'
+          icon: 'fa fa-wpforms'
         },
+
         {
           displayName: 'Template Driven',
           link: '/templateDriven',
           submenu: [],
-          icon: 'fa fa-dashboard'
+          icon: 'fa fa-wpforms'
         }
       ],
-      icon: 'fa fa-dashboard'
+      icon: 'fa fa-wpforms'
     },
     {
       displayName: 'Color Picker',
       link: '/colorPicker',
       submenu: [],
-      icon: 'fa fa-dashboard'
+      icon: 'fa fa-paw'
     },
     {
       displayName: 'Date Time Picker',
@@ -80,7 +81,7 @@ public hidetoggle = true;
       displayName: 'Modal',
       link: '/modal',
       submenu: [],
-      icon: 'fa fa-square'
+      icon: 'fa fa-object-group'
     }, {
       displayName: 'Filter Pipe',
       link: '/filterPipe',
@@ -115,7 +116,7 @@ public hidetoggle = true;
       displayName: 'Tabs',
       link: '/tabs',
       submenu: [],
-      icon: 'fa fa-dashboard'
+      icon: 'fa fa-tasks'
     },
     {
       displayName: 'Ngrx-Store',
@@ -124,23 +125,23 @@ public hidetoggle = true;
         {
           displayName: 'Generate Store',
           link: '/generateStore',
-          submenu: [],
-          icon: 'fa fa-dashboard'
+          submenu: [], 
+          icon: 'fa fa-database'
         },
         {
           displayName: 'Use Store',
           link: '/useStore',
           submenu: [],
-          icon: 'fa fa-dashboard'
+          icon: 'fa fa-database'
         }
       ],
-      icon: 'fa fa-dashboard'
+      icon: 'fa fa-database'
     },
     {
       displayName: 'Google Map',
       link: '/googleMap',
       submenu: [],
-      icon: 'fa fa-map'
+      icon: 'fa fa-map-marker'
     }
 
   ];
